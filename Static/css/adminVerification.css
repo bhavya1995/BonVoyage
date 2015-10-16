@@ -1,0 +1,13 @@
+nav img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 2px solid beige;
+    margin-top: -12px;
+}
+
+.first {
+	margin-top: 39px !important;
+}

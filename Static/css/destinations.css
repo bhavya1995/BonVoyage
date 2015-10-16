@@ -1,0 +1,58 @@
+nav img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 2px solid beige;
+    margin-top: -12px;
+}
+.travelname{
+
+	text-align: center;
+    font-size: 23px;
+    margin: 0px;
+    color: #fff;
+    font-weight: 500;
+    padding-top: 2%;
+}
+
+.travelcontent{
+
+	text-align: center;
+    font-size: 17px;
+    color: #DBDBDB;
+    font-weight: 500;
+}
+
+.active-category{
+
+	text-align: center;
+    width: 5% !important;
+    background-color: orange;
+    color: #fff;
+    border-radius: 24px !important;
+    padding: 10px !important;
+    margin: 0px 18px !important;
+}
+
+.inactive-category{
+
+	text-align: center;
+    width: 5% !important;
+    background-color: purple;
+    color: #fff;
+    border-radius: 24px !important;
+    padding: 10px !important;
+    margin: 0px 18px !important;
+}
+
+#Romantic-Nav1, #Relax-Nav1, #Cultural-Nav1 ,#Disappear-Nav1 ,#Adventure-Nav1 ,#City-Nav1 ,#With-Friends-Nav1 ,#With-Family-Nav1 {
+
+	display:none;
+}
+
+.Romantic, .Relax, .Cultural ,.Disappear ,.Adventure ,.City ,.With-Friends ,.With-Family {
+
+	display:none;
+}

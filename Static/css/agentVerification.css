@@ -1,0 +1,36 @@
+nav img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 2px solid beige;
+    margin-top: -12px;
+}
+
+.navbar {
+	background-color:#3E2723 !important;
+}
+
+.nav-container{
+	background-color:#3E2723 !important;
+	margin-left: -32px !important;
+	margin-right: -31px !important;
+}
+
+#dob {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.alert-row {
+    margin-top: 60px !important;
+}
+
+td img {
+    height: 100px !important;
+}
+
+#submitReq {
+    margin-bottom: 10px;
+}

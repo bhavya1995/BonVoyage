@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Bon Voyage</title>
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/demo.css">
+	 	<link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}images/favicon.ico" />
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/jquery-gmaps-latlon-picker.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/nouislider.min.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/nouislider.pips.css">
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		<script src="..{{STATIC_URL}}js/jquery-gmaps-latlon-picker.js"></script>
+		<script src="..{{STATIC_URL}}js/googleApi.js"></script>
+		
+		<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+		<script src="..{{STATIC_URL}}js/userRequirement.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/owl.carousel.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/owl.theme.css">
+		
+		<!-- Compiled and minified JavaScript -->
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+		<script src="..{{STATIC_URL}}js/nouislider.min.js"></script>
+    	<script src="..{{STATIC_URL}}js/wNumb.min.js"></script>
+    	<script src="..{{STATIC_URL}}js/owl.carousel.js"></script>
+	</head>
+	<body>
+		<nav class='brown darken-4'>
+		    <div class="nav-wrapper">
+		    	<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+		      <a href="#" class="brand-logo">Post Requirement</a>
+		    </div>
+	    </nav>
+	    <div class="row">
+		    <form class="col s12">
+		      <div class="row">
+		        <div class="input-field col s6">
+	                 <i class="fa fa-calendar prefix"></i>
+		          <input placeholder="Start Date" id="startDate" type="date" class="datepicker">
+		          <label for="startDate">Start Date</label>
+		        </div>
+		        <div class="input-field col s6">
+	                 <i class="fa fa-calendar prefix"></i>
+
+		          <input id="endDate" type="date" class="datepicker">
+		          <label for="endDate">End Date</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		      <div id='noUiSlider' class="col s8 offset-s2"></div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s6">
+	                 <i class="fa fa-inr prefix"></i>
+			          <input disabled placeholder="Budget" id="budget" type="text">
+			          <label for="budget">Budget</label>
+		        </div>
+		      </div>
+
+		    </form>
+
+	    </div>
+		<fieldset class="gllpLatlonPicker">
+			<div class="gllpMap">Google Maps</div>
+			<br/>
+			<input type="hidden" class="gllpLatitude"/>
+			<input type="hidden" class="gllpLongitude"/>
+			<input type="hidden" class="gllpZoom"/>
+	      <div class="row">
+	        <div class="input-field col s4">
+	        
+	                 <i class="fa fa-map-marker prefix"></i>
+	          <input placeholder="City Name" id="name" type="text" class="gllpLocationName">
+	          <label for="name">City Name</label>
+	        </div>
+	        <div class="col">
+			<a class="btn-floating btn-large waves-effect waves-light red" id ='addCity'><i class="material-icons">add</i></a>
+			</div>
+			<div class='col s5 m5' id='cityContainer'>
+			</div>
+
+	      </div>
+        <!-- <input type = 'submit' value="ADD" id ='addCity'> -->
+		</fieldset>
+		<div class="row">
+		<div class="col offset-m4 m4">
+		<div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+<div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+		<!-- USED FOR STORING ADDED CITIES NAME  -->
+		<div class="container-owl-carou-dynamic">
+		<!-- <div class="owl-carousel carousel-container"> -->
+<!-- 			<div class="card">
+				<div class="card-content">
+					<div class="row card-content-place">
+						<p>Ambience Mall</p>
+					</div>
+					<div class="row card-content-location">
+						<p>Gurgaon,Delhi</p>
+					</div>
+					<div class="row card-content-quality">
+						<p>Exquisite</p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-content">
+					<div class="row card-content-place">
+						<p>DLF Cyber City</p>
+					</div>
+					<div class="row card-content-location">
+						<p>Gurgaon,Delhi</p>
+					</div>
+					<div class="row card-content-quality">
+						<p>Exquisite</p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-content">
+					<div class="row card-content-place">
+						<p>DLF Promenade</p>
+					</div>
+					<div class="row card-content-location">
+						<p>Vasant-Kunj,Delhi</p>
+					</div>
+					<div class="row card-content-quality">
+						<p>Great</p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-content">
+					<div class="row card-content-place">
+						<p>Moments Mall</p>
+					</div>
+					<div class="row card-content-location">
+						<p>Rajouri-Garden,Delhi</p>
+					</div>
+					<div class="row card-content-quality">
+						<p>Great</p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-content">
+					<div class="row card-content-place">
+						<p>Abcdef</p>
+					</div>
+					<div class="row card-content-location">
+						<p>Faridabad,Uttar-Pradesh</p>
+					</div>
+					<div class="row card-content-quality">
+						<p>Bad</p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-content">
+					<div class="row card-content-place">
+						<p>Qwerty</p>
+					</div>
+					<div class="row card-content-location">
+						<p>Zxcvbnnm</p>
+					</div>
+					<div class="row card-content-quality">
+						<p>Worst</p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-content">
+					<div class="row card-content-place">
+						<p>Galleria Mall</p>
+					</div>
+					<div class="row card-content-location">
+						<p>Noida,Uttar-Pradesh</p>
+					</div>
+					<div class="row card-content-quality">
+						<p>Woah</p>
+					</div>
+				</div>
+			</div>-->
+		</div>
+		<div class="row">
+	      <button class="col m12 btn waves-effect waves-light" id='submitReq' type="submit" name="action">Submit
+    		<i class="material-icons right">send</i>
+  			</button>
+  		</div>
+	</body>
+</html>

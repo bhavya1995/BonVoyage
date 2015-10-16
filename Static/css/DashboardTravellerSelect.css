@@ -1,0 +1,86 @@
+nav img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 2px solid beige;
+    margin-top: -12px;
+}
+/*********************************************/
+
+.labels th{
+
+	text-align: center;
+}
+
+.requirementRow td{
+
+	text-align: center;
+	font-size: 15px;
+    font-weight: 400;
+    width: 20%;
+}
+
+/****************viewPackage******************/
+
+.input-field label{
+    -webkit-transform: translateY(-140%) !important;
+    -moz-transform: translateY(-140%) !important;
+    -ms-transform: translateY(-140%) !important;
+    -o-transform: translateY(-140%) !important;
+    transform: translateY(-140%) !important;
+    margin-left: 2.3rem !important;
+}
+
+.travellabel{
+
+	font-size: 19px !important;
+    color: initial !important;
+    font-weight: 500 !important;
+}
+
+.flightRow,.hotel-details,.tour-guide{
+
+	margin-top: 6%;
+}
+
+.validate{
+
+	font-size: 20px !important;
+    color: #242424 !important;
+    text-align: center !important;
+}
+
+
+.container-item i{
+
+	font-size: 2rem;
+}
+
+.container-item label{
+
+	font-size: 1.3rem;
+    text-align: center;
+}
+
+.container-item{
+
+	padding: 2% 3% 2% 2% !important;
+}
+
+.container-item p{
+
+	margin-top: 0px !important;
+    font-size: 1.3rem;
+}
+/*********************************************/
+
+.modal-footer1{
+
+	border-radius: 0 0 2px 2px !important;
+    background-color: #fafafa !important;
+    padding: 4px 6px !important;
+    height: 56px !important;
+    width: 100% !important;
+}

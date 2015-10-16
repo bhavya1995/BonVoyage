@@ -1,0 +1,16 @@
+nav {
+	margin-bottom: 60px;
+}
+
+.nav-wrapper img {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 2px solid beige;
+}
+
+.nav-wrapper h5 {
+	margin-top: 20px;
+}

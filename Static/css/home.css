@@ -1,0 +1,315 @@
+/*======================Container====================*/
+
+.wrapper{
+
+	background-image: url('../images/bg.png');
+	height: 100vh;
+}	
+
+.wrapper-cover {
+    background-color:rgba(0,0,0,0.5);
+    height: 100vh;
+    margin-left: -15px !important;
+    margin-right: -15px !important; 
+}
+/*==================================================*/
+
+
+/*======================NavBar====================*/
+.destinationsButton {
+    background-color: #004A7F;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    padding: 3%;
+    color: #fff !important;
+    border-radius: 23px;
+    border: 0px;
+    margin-top: 4%;
+    margin-left: 5%;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #f9a825; -webkit-box-shadow: 0 0 3px #f9a825; }
+  50% { background-color: #f4511e; -webkit-box-shadow: 0 0 40px #f4511e; }
+  100% { background-color: #ff3d00; -webkit-box-shadow: 0 0 3px #ff3d00; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #f9a825; -moz-box-shadow: 0 0 3px #f9a825; }
+  50% { background-color: #f4511e; -moz-box-shadow: 0 0 40px #f4511e; }
+  100% { background-color: #ff3d00; -moz-box-shadow: 0 0 3px #ff3d00; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #f9a825; box-shadow: 0 0 3px #f9a825; }
+  50% { background-color: #f4511e; box-shadow: 0 0 40px #f4511e; }
+  100% { background-color: #ff3d00; box-shadow: 0 0 3px #ff3d00; }
+}
+
+@keyframes glowing {
+  0% { background-color: #f9a825; box-shadow: 0 0 3px #f9a825; }
+  50% { background-color: #f4511e; box-shadow: 0 0 40px #f4511e; }
+  100% { background-color: #ff3d00; box-shadow: 0 0 3px #ff3d00; }
+}
+
+.destinationsButton {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+.navbar{
+
+    margin-top: 1%;
+}
+
+.navbar-right{
+
+    margin: 1% 3% 0% 0%;
+    font-size: 2rem;
+    width: 6%;
+}
+
+.navbar-right button{
+
+    color: #fff;
+    padding: 8% 29%;
+    background-color: #3E2723;
+    border-radius: 15px;
+    border: 0px;
+    cursor:pointer;
+}
+
+.navbar-right button:hover{
+
+    text-decoration: none;
+    background-color: #6F2424;
+    border: 2px solid #3E2723;
+}
+
+.navbar-header a{
+
+    font-size: 2.5rem;
+    margin-left: 30%;
+    margin-top: 8%;
+}
+
+.navbar-header{
+
+ /*   background-image: url('../images/logo_custom.jpg');
+    width: 256px;
+    height: 256px;
+ */   margin-left: 3% !important;
+}
+
+.navbar-header img {
+    height: 122px;
+    border-radius: 70px;
+}
+
+.navbar-header a:hover{
+
+    text-decoration: none;
+}
+
+.nav-content{
+
+	color: #fff;
+    font-size: 2rem;
+}
+
+.nav{
+
+    padding-top: 0.5%;
+}
+
+.login{
+
+    font-size: 2rem;
+    background-color: green;
+    color: #fff;
+    border: 0%;
+    margin: 0% 13%;
+    padding: 14% 24%;
+}
+
+
+/*==================================================*/
+
+/*======================inner-bg======================*/
+
+.firstrow{
+
+    padding: 3% 0% 2% 0%;
+    margin-top: 5%;
+}
+
+.title{
+
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+
+.description{
+
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+}
+
+.modifyhr{
+
+    margin-top: 6%;
+    width: 49vw;
+}
+
+.createaccountcontent{
+
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
+    padding: 5% 0% 5% 0%;
+}
+
+.signupbutton{
+
+    font-size: 2rem;
+    padding: 7% 14%;
+    background-color: #2BBBAD;
+    color: #fff;
+    border: 0px;
+    margin-left: 4%;
+}
+
+.thirdrow-buttons button:hover{
+
+    background-color: #E57373;
+}
+/*==================================================*/
+
+/*=====================signupandloginform===================*/
+
+.dropdown-toggle{
+
+    background-color: #fff;
+    color: #242424;
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+}
+
+.dropdown-menu{
+
+    width: 100%;
+}
+
+.form-lower{
+
+    padding: 25px 25px 30px 25px;
+    background: #eee;
+    text-align: left;
+}
+
+#form-lower-login{
+
+    display: none;
+}
+
+.form-lower input,.submit {
+    height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #f8f8f8;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #888;
+}
+
+.form-social {
+
+    background: #f8f8f8;
+    text-align: left;
+}
+
+/*.form-social-icons {
+
+    display: flex;
+}*/
+
+.form-social-icon {
+
+    width: 50%;
+    align-items: center;
+    font-size: 1.7rem;
+    padding: 2%;
+    font-weight: 300;
+    color: #242424;
+}
+
+.form-social-icon:hover {
+
+    background-color: #2A2C2C;
+    color: #fff;
+} 
+
+.facebook-icon {
+
+    margin: 4% 0% 2% 27%;
+}
+
+.google-icon {
+
+    margin: 1% 0% 4% 27%;
+}
+
+.submit {
+
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: #242424;
+}
+
+#signupForm .submit:hover,#loginForm .submit:hover{
+
+    color: #fff !important;
+    background-color:  #939292;
+}
+
+#signupForm .modal-body .row{
+
+    margin-bottom: 20px;
+}
+
+.form-top-container{
+
+    display: flex;
+}
+
+.form-top-left {
+
+    width: 75%;
+    padding-top: 5px;
+    padding-left: 4%;
+}
+
+.form-top-right {
+
+    width: 25%;
+    padding-top: 10px;
+    font-size: 70px;
+    color: #eee;
+    line-height: 100px;
+    text-align: right;
+}
+/*==================================================*/

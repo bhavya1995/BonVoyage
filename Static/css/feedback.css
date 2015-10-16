@@ -1,0 +1,99 @@
+.template-download img{
+	height: 100px !important;
+}
+
+
+.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute !important;
+    top:-9999px !important;
+    clip:rect(0,0,0,0) !important;
+}
+
+.rating:not(:checked) > label {
+    float:right !important;
+    width:1em !important;
+    padding:0 .1em !important;
+    overflow:hidden !important;
+    white-space:nowrap !important;
+    cursor:pointer !important;
+    font-size:200% !important;
+    line-height:1.2 !important;
+    color:#ddd !important;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5) !important;
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ' !important;
+}
+
+.rating > input:checked ~ label {
+    color: #f70 !important;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5) !important;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold !important;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5) !important;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0 !important;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5) !important;
+}
+
+.rating > label:active {
+    position:relative !important;
+    top:2px !important;
+    left:2px !important;
+}
+
+.rating [type="radio"]+label:before, .rating [type="radio"]+label:after {
+	position: relative !important;
+	margin: 0px !important;
+}
+
+.rating [type="radio"]:not(:checked)+label:before {
+    border-radius: 0% !important; 
+    border: 0px solid #5a5a5a !important; 
+}
+
+.rating [type="radio"]:not(:checked)+label, .rating [type="radio"]:checked+label {
+	height:auto !important;
+}
+
+
+nav img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 2px solid beige;
+    margin-top: -12px;
+}
+
+.navbar {
+	background-color:#3E2723 !important;
+}
+
+.nav-container{
+	background-color:#3E2723 !important;
+	margin-left: -32px !important;
+	margin-right: -31px !important;
+}
+
+fieldset {
+	margin-top: 50px !important;
+}

@@ -1,0 +1,326 @@
+nav img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 2px solid beige;
+    margin-top: -12px;
+}
+/********************wrapper*******************/
+
+.wrapper{
+
+	/*background-image: url('../images/Background.jpg');*/
+	height: 100vh;
+}	
+
+#nav-mobile a{
+
+	color: #242424;
+}
+
+/*********************************************/
+
+/********************nav*******************/
+
+nav{
+	height: 50px !important;
+}
+
+.container-nav{
+
+	position: fixed !important;
+}
+
+
+
+/*********************************************/
+
+/*****************inner-container*******************/
+.top-panel{
+
+}
+
+.row{
+
+	margin-bottom: 10px !important;
+}
+
+.travelagent{
+
+	font-size: 2rem;
+    color: #242424;
+    width: 26% !important;
+    padding-right: 0px;
+}
+
+.badge{
+
+	margin-left: -24px !important;
+	position: initial !important;
+	font-size: 2rem !important;
+    color: white !important;
+    background-color: #969696 !important;
+    border-radius: 15px !important;
+}
+
+.text-inner-nav{
+
+	color: #242424;
+	margin: 0px;
+	line-height: 48px;
+    margin-top: 2px;
+	margin-left: 6%;
+	font-size: 1.2rem;  
+	text-align: center;
+	margin-left: 0px !important;
+}
+
+.inner-bg nav{
+
+	background-color:transparent;
+}
+
+.input-field{
+
+    margin: 0px !important;
+    padding-left: 0px !important; 
+}
+
+.input-field-bidvalue{
+
+	position: absolute;
+    margin-top: 0% !important;
+    border: 0px !important;
+    margin-left: -15px !important;
+    color: #242424 !important;
+}
+
+.panel_price_left .input-field-value{
+
+    width: 80% !important;
+	margin-bottom: 0px !important;
+    font-size: 1.6rem !important;
+    margin-top: 20%;
+    color: #242424 !important;
+    padding-right: 1% !important;
+
+}
+
+.panel_package_name , .panel_name{
+
+	margin-top: 5%;
+	font-size: 1.3rem;
+	text-align: center;
+}
+
+.panel_image{
+
+	margin-top: 22% !important;	
+}
+
+.diagonal{
+
+	position: absolute;
+	width: 70px;
+	margin-top: 69px;
+	border-bottom: 1px solid grey;
+	-webkit-transform: translateY(-21px) translateX(46px) rotate(-29deg);
+}
+
+.panel_price_righttop{
+
+	margin-top: 15%;
+}
+
+.panel_price_righttop a{
+
+	border-radius: 32px;
+	background-color: #000;
+	color: #fff;
+	margin-left: 14%;
+}
+
+.userClass{
+
+	background-color: #FF9B42;
+}
+
+.userClass .panel_name,.userClass .panel_package_name,.userClass .input-field-value,.userClass .input-field-bidvalue{
+
+    color: #fff !important;
+}
+
+.right-container{
+
+	width: 75% ;
+    margin-top: 4% !important;
+    min-height: 608px;
+    background-color: #D9E5D6;
+    padding: 5% 3% 0% 3% !important;
+}
+
+.viewPackage{
+
+	cursor: pointer !important;
+}
+/*********************************************/
+
+
+/****************left panel*****************/
+
+.left-container{
+
+	padding-top: 3% !important;
+    margin-top: 6% !important;
+    height: 580px;
+}
+
+.name-panel{
+
+	font-size: 1.5rem;
+    background-color: #EDDEA4;
+    color: #242424;
+}
+
+hr{
+
+	width: 16%;
+    margin-left: 0px;
+    font-size: 0rem;
+    height: 3px !important;
+    background-color: #0FA3B1;
+    margin-top: 1%;
+    margin-bottom: 9% !important; 
+}
+
+.other-details p{
+
+	font-size: 1.1rem;
+    background-color: #8274E8;
+}
+
+
+.collapsible-body p{
+
+	text-align: center !important;
+}
+
+.cities{
+
+	background-color: #F7A072;
+}
+
+.cities p{
+
+	margin: 4% 7% !important;
+    font-size: 1.2rem !important;
+}
+
+.left-container-heading{
+
+	font-size: 2rem;
+    margin-top: 10px;
+}
+/*********************************************/
+
+
+/****************viewPackage******************/
+
+
+.container-item i{
+
+	font-size: 2rem;
+}
+
+.container-item label{
+
+	font-size: 1.3rem;
+    text-align: center;
+}
+
+.container-item{
+
+	padding: 2% 3% 2% 2% !important;
+}
+
+.container-item p{
+
+	margin-top: 0px !important;
+    font-size: 1.3rem;
+}
+/*********************************************/
+
+.bidpt_container{
+
+	margin-bottom: 0px !important;
+}
+
+.bidpt_container_uprow{
+
+	height: 25px !important;
+    margin-bottom: 0px !important;
+}
+
+.bidpt_container_uprow p{
+
+	margin-top: 0px !important;
+	text-align: center !important;
+}
+
+.bidpt_icon{
+
+	width: inherit !important;
+	font-size: 1.3rem !important;
+}
+
+.bidpt_content{
+
+	width: inherit !important;
+	font-size: 1.3rem !important;
+    font-weight: 500 !important;
+}
+
+.bidpt_container_downrow{
+
+	color: inherit;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.bidpt_button_container{
+
+	width: 24% !important;
+    margin-left: 34% !important;
+    margin-top: 16px !important;
+}
+
+.input-field label{
+    -webkit-transform: translateY(-140%) !important;
+    -moz-transform: translateY(-140%) !important;
+    -ms-transform: translateY(-140%) !important;
+    -o-transform: translateY(-140%) !important;
+    transform: translateY(-140%) !important;
+    margin-left: 2.3rem !important;
+}
+
+.travellabel{
+
+	font-size: 19px !important;
+    color: initial !important;
+    font-weight: 500 !important;
+}
+
+.flightRow,.hotel-details,.tour-guide{
+
+	margin-top: 6%;
+}
+
+.validate{
+
+	font-size: 20px !important;
+    color: #242424 !important;
+    text-align: center !important;
+}

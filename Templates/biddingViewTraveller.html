@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Bon Voyage</title>
+	 	<link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}images/favicon.ico" />
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/biddingView.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/bootstrap-social.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+		<script src="..{{STATIC_URL}}js/biddingView.js"></script>
+		
+	</head>
+	<body>	
+		
+		<nav class='row brown darken-4 container-nav' style="height: 70px !important">
+			<div class="nav-wrapper col s3" style="padding-left:0px">
+				<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+				<a href="#" class="brand-logo">Bon Voyage</a>
+			</div>
+			<div class="right col s5 offset-s4">
+				<ul>
+					<li>
+						<a class="waves-effect waves-light" style="font-size: 16px;font-weight: 500">Hi {{firstName}} {{lastName}} 
+						</a>
+					</li>
+					<li>
+						<a href="/dashboardTraveller" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+							Dashboard
+						</a>
+					</li>
+					<li>
+						<a href="/userRequirement" style="font-size: 16px;font-weight: 500" id='post-requirement' class="with-top-nav waves-effect waves-light">Post Requirements</a>
+					</li>
+				</ul>
+			</div>    
+		</nav>
+	    <div class="wrapper">
+			<div class="row" style="margin-bottom:0px !important">
+
+				<div class="col s3 left-container">
+					<h5 class="left-container-heading">My Requirement</h5>
+					<hr class="left-container-hr"></hr>
+					<ul class="collapsible left-container-accordion" data-collapsible="accordion">	
+						<li>
+							<div class="collapsible-header active"><i class="fa fa-user"></i>Name</div>
+							<div class="collapsible-body name-panel"><p>{{traveller.name}}</p></div>
+						</li>
+						<li>
+							<div class="collapsible-header"><i class="fa fa-calendar"></i>Date</div>
+							<div class="collapsible-body other-details">
+								<p style="padding-bottom: 0px">Start Date : {{traveller.startDate}}</p>
+								<p>End Date : {{traveller.endDate}}</p>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header"><i class="fa fa-map-marker prefix"></i>City/Cities</div>
+							<div class="row collapsible-body cities">
+								{% for city in traveller.cities %}
+
+									<p class="city col s4">
+										{{city}}
+									</p>	
+								{% endfor %}
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col s9 right-container">
+
+					<div class="row">
+						<div class="col s2 travelagent">Travel-Agents</div>
+						<div class="col s2 badge-container"><span class="badge counter">{{agentCount}}</span></div>
+						<div class="col s5"></div>
+					</div>
+					<div class="row inner-bg">
+						<div class="row top-panel">
+							<nav >
+								<div class="inner-nav">
+									<div class="col s3">
+										<p class="text-inner-nav">Travel-Agent</p>
+									</div>
+									<div class="col s3">
+										<p class="text-inner-nav">Package-Name</p>
+									</div>
+									<div class="col s6">
+										<p class="text-inner-nav">Price</p>
+									</div>
+								</div>
+							</nav>
+						</div>
+						<div class="panel-container">
+							{% for p in travelAgents%}
+								<div class="row viewPackage modal-trigger row panel {% ifequal p.yser 1 %}userClass{% endifequal %}" id="{{p.Id}}" href="#viewPackage">
+									<div class="col s3 panel_name">
+										{{p.Username}}
+									</div>
+									<div class="col s3 panel_package_name">
+										{{p.Packagename}}
+									</div>
+									<div class="row col s6 panel_budget">
+										{% ifequal p.BidPrice '0' %}
+											<div class="col s6 offset-s2">
+												<div class="row panel_price_left">
+													<div class="col s3 panel_image" style="margin-top: 26%">
+														<img src="{{STATIC_URL}}images/rupee.png" />
+													</div>
+													<div class="col s9 input-field">
+														<input class="input-field-value" disabled value="{{p.Price}}" type="tel" style="margin-top: 27%">
+													</div>
+												</div>	
+											</div>
+											<div class="col s4">
+												<button class="bidpt_button btn tooltipped waves-effect waves-light" type="submit" data-position="bottom" data-delay="50" data-tooltip="Accept Package" style="    margin-top: 34%">
+													<i class="fa fa-check"></i>
+												</button>
+											</div>
+										{% endifequal %}
+										{% ifnotequal p.BidPrice '0' %}
+											<div class="row bidpt_container" style="width: 87%;margin-left: 13%">
+												<div class="col s3 bidpt_bidprice_container">
+													<p class="col s4 bidpt_icon" style="padding-right: 2px; margin-right: 10%">
+														<i class="fa fa-inr"></i>
+													</p>	
+													<p class="col s8 bidpt_content" style="padding-left: 0px">
+														{{p.Savings}}
+													</p>
+												</div>
+												<div class="col s6 offset-s3 bidpt_button_container">
+													<button class="bidpt_button btn tooltipped waves-effect waves-light" type="submit" data-position="bottom" data-delay="50" data-tooltip="Accept Package">
+														<i class="fa fa-check"></i>
+													</button>
+												</div>
+											</div>
+											<div class="row bidpt_container" style="width: 90%;margin-left: 8%">
+												<div class="col s4 bidpt_container_col">
+													<div class="row bidpt_container_uprow">
+														<p class="col s4 bidpt_icon" style="padding-right: 2px">
+															<i class="fa fa-inr"></i>
+														</p>	
+														<p class="col s8 bidpt_content" style="padding-left: 0px">
+															{{p.Price}}
+														</p>
+													</div>
+													<div class="bidpt_container_downrow">
+														<p style="text-align: center;position: absolute;margin-left: 2.7%;margin-top: 0%">VALUE</p>
+													</div>
+												</div>
+												<div class="col s4 bidpt_container_col">
+													<div class="row bidpt_container_uprow">
+														<p class="col s8 bidpt_content" style="padding-right: 2px;margin-left: 12%">
+															{{p.Discount}}
+														</p>
+														<p class="col s4 bidpt_icon" style="padding-left:0px">
+															%
+														</p>
+													</div>
+													<div class="bidpt_container_downrow">
+														<p style="position: absolute;margin-top: 0%;margin-left: 0%;text-align: center;margin-left: 0.4%">DISCOUNTS</p>
+													</div>
+												</div>
+												<div class="col s4 bidpt_container_col">
+													<div class="row bidpt_container_uprow">
+														<p class="col s4 bidpt_icon" style="padding-right: 2px">
+															<i class="fa fa-inr"></i>
+														</p>	
+														<p class="col s8 bidpt_content" style="padding-left: 0px">
+															{{p.BidPrice}}
+														</p>
+													</div>
+													<div class="bidpt_container_downrow">
+														<p style="position: absolute;margin-top: 0px;
+	    												text-align: center;margin-left: 2%">SAVINGS</p>
+													</div>
+												</div>
+											</div>
+										{% endifnotequal %}
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<!--Agent's Package Portion-->
+		<div id="viewPackage" class="modal">
+			<div class="modal-content">
+				<div class="row name-conatiner">
+					<div class="col s6 container-item">
+						<i class="fa fa-user col s2"></i>
+						<label class="col s4">Name :</label>
+						<p class="viewName col s6"></p>
+					</div>
+					<div class="col s6 container-item">
+						<i class="fa fa-user-plus col s2"></i>
+						<label class="col s4">Package-Name :</label>
+						<p class="viewPackageName col s6"></p>
+					</div>
+				</div>
+				<div class="row price-conatiner">
+					<div class="col s6 container-item">
+						<i class="fa fa-inr col s2"></i>
+						<label class="col s4">Price :</label>
+						<p class="viewPrice col s6" ></p>
+					</div>
+					<div class="col s6 container-item">
+						<i class="fa fa-inr col s2"></i>
+						<label class="col s4">Bid :</label>
+						<p class="viewBid col s6" ></p>
+					</div>
+				</div>
+				<div class="row remarks-container">
+					<div class="col s8 offset-s3 container-item">
+						<i class="fa fa-pencil col s2"></i>
+						<label class="col s4">Remarks :</label>
+						<p class="viewRemarks col s6" ></p>
+					</div>
+				</div>
+				<div class="row">
+
+					<form class="col s12 customForm airportForm">
+					</form>
+
+					<form class="col s12 customFormHotel">	
+					</form>
+					
+					<form class="col s12 tourGuide">
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer" style="margin-top: -7%">
+				<a class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+			</div>
+		</div>
+		<!--Agent's Package Portion Ends-->
+			
+	</body>
+</html>

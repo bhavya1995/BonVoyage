@@ -1,0 +1,79 @@
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+form	{ margin: 0px; padding: 0px; }
+table   { border-collapse: collapse; border-spacing: 0px; }
+caption, th, td {text-align: left; font-weight: normal; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+BODY    { color: #000; font-family: Helvetica, Arial, Verdana, sans-serif; font-size: 14.0px; }
+
+
+UL 		{ margin: 0 20px; }
+UL LI	{ margin: 5px 0; }
+
+.gllpLatlonPicker	{ margin: 20px 0; }*/
+nav img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 2px solid beige;
+    margin-top: -12px;
+}
+
+nav{
+	height: 50px !important;
+}
+
+fieldset{
+	border: 0px !important;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.row {
+	margin-bottom: 0px !important;
+}
+
+#noUiSlider {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.slider {
+	width: 100%;
+	height: 100%;
+}
+
+.slider > div > div {
+	width: 25%;
+	height: 100%;
+	background: orange
+}
+
+.card{
+
+	width: 90% !important;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+}
+
+.card-content-place{
+
+	font-size: 1.3rem;
+    text-align: center;
+    color: #242424;
+    margin-bottom: 15 !important;
+    font-weight: 500;
+}   
+
+.card-content-location,.card-content-quality{
+
+	color: inherit;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 15 !important;
+    text-align: center;
+}

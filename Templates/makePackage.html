@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		<title>Bon Voyage</title>
+	 	<link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}images/favicon.ico" />
+		<link rel="stylesheet" href="{{STATIC_URL}}css/nav.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  		
+     	 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+			<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="..{{STATIC_URL}}js/makePackage.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+
+	</head>
+	<body>
+		<nav class='brown darken-4'>
+		    <div class="nav-wrapper">
+		    	<div class="row">
+		    	<div class="col"><image src='{{STATIC_URL}}images/logo_custom.jpg'></image></div>
+		      <div class="col s4"><h5>Create A Package</h5></div>
+		      </image>
+		    </div>
+	    </nav>
+
+	    <div class="row">
+    <form class="col s12 customForm">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="fa fa-pencil prefix"></i>
+          <input placeholder="Package Name" id="packageName" type="text" class="validate">
+          <label for="packageName">Package Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="fa fa-inr prefix"></i>
+          <input id="price" type="text" class="validate" placeholder="price">
+          <label for="price">Price</label>
+        </div>
+      </div>
+      <div class="row flightRow">
+		<div class="input-field col s4">
+			<i class="fa fa-plane prefix"></i>
+			<label for="airports">Departure Airport</label>
+			<input id="airports" type="text" class="validate air departure" placeholder="Departure Airport">
+		</div>
+		<div class="input-field col s4">
+			<i class="fa fa-plane prefix"></i>
+				<label for="airports">Arrival Airport</label>
+			<input id="airports" type="text" class="validate air arrival" placeholder="Arrival Airport">
+		</div>
+    	<div class="input-field col s4">
+    		<select id='seatTypeSelect'>
+      			<option value="" disabled selected>Seat Type</option>
+      			<option value="Economic">Economic</option>
+      			<option value="Business">Business</option>
+      			<option value="First Class">First Class</option>
+    		</select>
+    		<label>Seat Type</label>
+  		</div>
+	  </div>
+
+    </form>
+    <div class="row">
+	    <div class="col">
+			<a class="btn-floating btn-small waves-effect waves-light red" id ='addAirport'><i class="material-icons">add</i></a>
+		</div>
+	</div>
+    <form class="col s12 customFormHotel">
+
+      <div class="row hotel-details" id='hotel-row'>
+		<div class="input-field col s4">
+			<i class="fa fa-bed prefix"></i>
+			<label for="hotel-name">Hotel Name</label>
+			<input id="hotel-name" type="text" class="validate" placeholder="Hotel Name">
+		</div>
+		<div class="input-field col s3">
+			<i class="fa fa-building prefix"></i>
+				<label for="hotel-city">City</label>
+			<input id="hotel-city" type="text" class="validate" placeholder="City">
+		</div>
+		<div class="input-field col s2">
+			<label for="room-type">Room Type</label>
+			<input id="room-type" type="text" class="validate" placeholder="Room Type">
+		</div>
+ 		<div class="input-field col s3">
+			<label for="num-of-days-nights">Number of Days and Nights</label>
+			<input id="num-of-days-nights" type="text" class="validate" placeholder="Number of Days and Nights">
+		</div>
+ 	 </div>
+ 	 </form>
+ 	<div class="row">
+	    <div class="col">
+			<a class="btn-floating btn-small waves-effect waves-light blue" id ='addHotel'><i class="material-icons">add</i></a>
+		</div>
+	</div>
+    <form class="col s12 tourGuide">
+
+      <div class="row tour-guide" id='tour-guide'>
+		<div class="input-field col s12">
+			<textarea id="day" class="materialize-textarea"></textarea>
+          	<label for="day">Details For Day 1</label>
+  		</div>
+ 	 </div>
+ 	 </form>
+ 	<div class="row">
+	    <div class="col">
+			<a class="btn-floating btn-small waves-effect waves-light green" id ='addDay'><i class="material-icons">add</i></a>
+		</div>
+	</div>
+	
+  </div>
+
+  		<div class="row" id="{{travelReqId}}">
+	      <button class="col m12 btn waves-effect waves-light" id='submitReq' type="submit" name="action">Submit
+    		<i class="material-icons right">send</i>
+  			</button>
+  		</div>
+
+</body>
+</html>

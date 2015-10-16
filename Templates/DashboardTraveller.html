@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Bon Voyage</title>
+	 	<link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}images/favicon.ico" />
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/DashboardTraveller.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<script src="..{{STATIC_URL}}js/DashboardTraveller.js"></script>
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+	</head>
+	<body>
+		<nav class='row brown darken-4 container-nav' style="height: 70px">
+			<div class="nav-wrapper col s3" style="padding-left:0px">
+				<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+				<a href="#" class="brand-logo">Dashboard</a>
+			</div>
+			<div class="right col s5 offset-s4">
+				<ul>
+					<li>
+						<a class="waves-effect waves-light" style="font-size: 16px;font-weight: 500">Hi {{firstName}} {{lastName}} 
+						</a>
+					</li>
+					<li>
+						<a href="/dashboardTraveller" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+							Dashboard
+						</a>
+					</li>
+					<li>
+						<a href="/userRequirement" style="font-size: 16px;font-weight: 500" id='post-requirement' class="with-top-nav waves-effect waves-light">Post Requirements</a>
+					</li>
+				</ul>
+			</div>    
+		</nav>
+		<div class="container">
+			<div>
+				{% ifequal count 0%}
+					<div class="row">
+					        <div class="col s12 m12">
+					          <div class="card brown darken-2">
+					            <div class="card-content white-text">
+					              <span class="card-title">Add Your First Requirement</span>
+					            </div>
+					          </div>
+					        </div>
+					      </div>
+  				{% endifequal %}
+				{% ifequal count -1 %}
+				<table>
+					<thead>
+						<tr class="labels">
+							<th data-field="name">Name</th>
+							<th data-field="startdate">Start Date</th>
+							<th data-field="enddate">End Date</th>
+							<th data-field="price">Budget</th>
+							<th data-field="count">Count</th>
+							<th data-field="additional">
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for r in reqobj %}
+							<tr id='{{r.id}}' class="row requirementRow">
+								<td>{{r.name}}</td>
+								<td>{{r.startDate}}</td>
+								<td>{{r.endDate}}</td>
+								<td>{{r.budget}}</td>
+								<td><div class="col s6 rowcount offset-s3 tooltipped" data-position="right" data-delay="50" data-tooltip="Lets Go In !!!">{{r.count}}</div></td>
+								<td class="additional">
+									{% ifequal r.end 1 %}
+										<a class="waves-effect waves-light btn tooltipped shareExperience" data-position="top" data-delay="50" data-tooltip="Help Us Grow By Sharing Your Experience !!" style="background-color: #505050"><i class="fa fa-hand-peace-o"></i>Spare A Minute!!</a>
+									{% endifequal %}
+									{% ifequal r.end 0 %}
+										{% ifequal r.status 0 %}
+											<a class="waves-effect waves-light btn tooltipped selectPackage" data-position="top" data-delay="50" data-tooltip="Select Agent Packages You Like For Bidding Or Confirm Your Package" style="background-color: #505050"><i class="fa fa-smile-o"></i>Select Packages</a>
+										{% endifequal %}
+										{% ifequal r.status 1 %}
+										<a class="waves-effect waves-light btn tooltipped" data-position="top" data-delay="50" data-tooltip="Have A Wonderful Experience !!" style="background-color: #505050"><i class="fa fa-smile-o"></i>Yippee, All Is Set!!</a>
+										{% endifequal %}
+									{% endifequal %}		
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				{% endifequal %}
+			    <div class="row">
+				    <div class="col offset-m5">
+						<a href='/userRequirement' class="btn-floating btn-large waves-effect waves-light brown darken-4" id ='addAirport'><i class="material-icons">add</i></a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>

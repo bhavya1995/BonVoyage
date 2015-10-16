@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Bon Voyage</title>
+	 	<link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}images/favicon.ico" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/home.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/bootstrap-social.css">
+		<script src="..{{STATIC_URL}}js/home.js"></script>
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid wrapper">
+		<div class="container-fluid wrapper-cover">
+			<nav class="navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a href="#"><image src="{{STATIC_URL}}images/logo_custom.jpg"></a>
+					</div>
+					<div class="col-md-6 col-md-offset-2">
+						<button type="button" class="destinationsButton">Confused Where To Go?? Let Us Help You!!</button>
+					</div>
+					<div class="navbar-right ">
+						<button type="button" class="loginbutton" data-toggle="modal" data-target="#loginForm">Login</button>
+					</div>
+				</div>
+			</nav>
+			<div class="inner-bg container">
+				<div class="row firstrow">
+					<div class="col-md-2"></div>
+					<div class="col-md-8 title">
+						Welcome
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row secondrow">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div class="row description">
+							The safest and easiest way for travellors to connect and collaborate travel-agents and each other.
+						</div>
+						<div class="row"><hr class="modifyhr"></div>	
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row thirdrow">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div class="row createaccountcontent">
+							Create your free account !!
+						</div>
+						<div class="row thirdrow-buttons">
+							<div class="col-md-4"></div>
+							<div class="col-md-4">
+								<button type="button" class="signupbutton" data-toggle="modal" data-target="#signupForm">Sign up now !!</button>
+							</div>
+							<div class="col-md-4">
+							</div>
+						</div>	
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+			</div> 
+		</div>
+
+      <!-- Modal content-->
+		<div class="modal fade" id="signupForm" role="dialog" aria-labelledby="signupForm">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content" >
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<div class="modal-title row" id="myModalLabel">
+							<div class="form-top-container row">	
+								<div class="form-top-left">
+	                        		<h3 id="form-top-signup">Sign up now</h3>
+	                            	<p>Fill in the form below to get instant access:</p>
+	                        	</div>
+	                        	<div class="form-top-right">
+	                        		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+	                        	</div>
+                        	</div>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="form-group">
+								<div class="col-md-3"></div>
+								<div class="dropdown col-md-6">
+									<label for="sel1">Traveller Or Travel-Agent:</label>
+										<select class="form-control" id="sel1">
+											<option>Traveller</option>
+											<option>Travel-Agent</option>
+										</select>
+								</div>
+								<div class="col-md-3"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="sr-only" for="form-first-name">First Name</label>
+									<input type="text" class="form-control" id="form-first-name" placeholder="First Name">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="sr-only" for="form-last-name">Last Name</label>
+									<input type="text" class="form-control" id="form-last-name" placeholder="Last Name">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="sr-only" for="form-email">Email Address</label>
+									<input type="text" class="form-control" id="form-email" placeholder="Email Address">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="sr-only" for="form-mobile">Mobile Number</label>
+									<input type="number" class="form-control" id="form-mobile" placeholder="Mobile Number">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="sr-only" for="pass">Password</label>
+									<input type="password" class="form-control" id="pass" placeholder="Password">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4"></div>
+							<div class="col-md-4">
+								<button class="btn submit signupCustom" type="submit" style="margin-left:12%">Sign me up!</button>
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="loginForm">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<div class="modal-title row" id="myModalLabel">
+							<div class="form-top-container row">	
+								<div class="form-top-left">
+	                        		<h3 id="form-top-signup">Login now</h3>
+	                            	<p>Fill in the form below to get instant access:</p>
+	                        	</div>
+	                        	<div class="form-top-right">
+	                        		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+	                        	</div>
+                        	</div>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="sr-only" for="form-username">UserName</label>
+									<input type="text" class="form-control" id="form-username" placeholder="UserName">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="sr-only" for="form-password">Password</label>
+									<input type="password" class="form-control" id="form-password" placeholder="Password">
+								</div>
+							</div>	
+						</div>
+						<div class="row" style="margin-bottom: 4%">
+							<div class="col-md-4"></div>
+							<div class="col-md-4" style="margin-left:4%">
+								<button class="btn submit login" type="submit">Login now!</button>
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+						<div class="row">
+							<div class="form-social">
+								<form role="form" id="form-social">
+									<div class="form-group form-social-icons">
+										<a class="btn btn-social btn-facebook form-social-icon facebook-icon">
+											<i class="fa fa-facebook"></i> Facebook Sign In!
+										</a>	
+										<a class="btn btn-social btn-google form-social-icon google-icon">
+											<i class="fa fa-google"></i> Google Sign In!
+										</a>	
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

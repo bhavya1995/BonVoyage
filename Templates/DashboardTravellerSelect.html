@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Bon Voyage</title>
+	 	<link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}images/favicon.ico" />
+		<link rel="stylesheet" href="{{STATIC_URL}}css/DashboardTravellerSelect.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<script src="{{STATIC_URL}}js/DashboardTravellerSelect.js"></script>
+		<script src="{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+	</head>
+	<body>
+		<nav class='row brown darken-4 container-nav' style="height: 70px">
+			<div class="nav-wrapper col s3" style="padding-left:0px">
+				<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+				<a href="#" class="brand-logo">Bon Voyage</a>
+			</div>
+			<div class="right col s5 offset-s4">
+				<ul>
+					<li>
+						<a class="waves-effect waves-light" style="font-size: 16px;font-weight: 500">Hi {{firstName}} {{lastName}} 
+						</a>
+					</li>
+					<li>
+						<a href="/dashboardTraveller" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+							Dashboard
+						</a>
+					</li>
+					<li>
+						<a href="/userRequirement" style="font-size: 16px;font-weight: 500" id='post-requirement' class="with-top-nav waves-effect waves-light">Post Requirements</a>
+					</li>
+				</ul>
+			</div>    
+		</nav>
+		<div class="container">
+			<div>
+				<table>
+					<thead>
+						<tr class="labels">
+							<th>
+								Select Package For Bid
+      						</th>
+							<th data-field="name">Name</th>
+							<th data-field="startdate">Budget</th>
+							<th data-field="additional">See-Package</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for p in packages %}
+							<tr id='{{p.id}}' class="requirementRow col s6 offset-s3">
+								<td>
+									<input type="checkbox" id="package{{p.id}}" />
+      								<label for="package{{p.id}}"></label>
+								</td>
+								<td>{{p.name}}</td>
+								<td>{{p.price}}</td>
+								<td class="additional">
+									<a class="waves-effect viewPackage modal-trigger waves-light btn entire-package" id="{{p.id}}" href="#viewPackage" style="background-color: #505050">
+										Entire Package	
+									</a>		
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!--Agent's Package Portion-->
+		<div id="viewPackage" class="modal">
+			<div class="modal-content">
+				<div class="row name-conatiner">
+					<div class="col s6 container-item">
+						<i class="fa fa-user col s2"></i>
+						<label class="col s4">Name :</label>
+						<p class="viewName col s6"></p>
+					</div>
+					<div class="col s6 container-item">
+						<i class="fa fa-user-plus col s2"></i>
+						<label class="col s4">Package-Name :</label>
+						<p class="viewPackageName col s6"></p>
+					</div>
+				</div>
+				<div class="row price-conatiner">
+					<div class="col s6 container-item">
+						<i class="fa fa-inr col s2"></i>
+						<label class="col s4">Price :</label>
+						<p class="viewPrice col s6" ></p>
+					</div>
+					<div class="col s6 container-item">
+						<i class="fa fa-inr col s2"></i>
+						<label class="col s4">Bid :</label>
+						<p class="viewBid col s6" ></p>
+					</div>
+				</div>
+				<div class="row remarks-container">
+					<div class="col s10 offset-s2 container-item">
+						<i class="fa fa-pencil col s1"></i>
+						<label class="col s3">Remarks :</label>
+						<p class="viewRemarks col s8"></p>
+					</div>
+				</div>
+				<div class="row">
+
+					<form class="col s12 customForm airportForm">
+					</form>
+
+					<form class="col s12 customFormHotel">	
+					</form>
+					
+					<form class="col s12 tourGuide">
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer" style="margin-top: -7%">
+				<a class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+			</div>
+		</div>
+		<!--Agent's Package Portion Ends-->	
+
+		<!--Confirmation Portion-->	
+		<div id="confirmModel" class="modal bottom-sheet">
+			<div class="modal-content">
+				<p style="font-size: 15px; margin: 0px; font-weight: 500">"Do you really want to select the package, notification will be sent to Travel-Agent, decide wisely!!"</p>
+			</div>
+			<div class="modal-footer">
+				<a class=" modal-action modal-close waves-effect waves-green btn-flat" id="agreeButton">Agree</a>
+				<a class=" modal-action modal-close waves-effect waves-green btn-flat" id="cancelButton">Cancel</a>
+			</div>
+		</div>
+		<!--Confirmation Portion Ends-->	
+
+		<!--Confirmation Portion-->	
+		<div id="confirmModel2" class="modal bottom-sheet">
+			<div class="modal-content">
+				<p style="font-size: 15px; margin: 0px; font-weight: 500">"Do you really want to cancel the selected package, you may lose a good Travel-Package opportunity, decide wisely!!"</p>
+			</div>
+			<div class="modal-footer1">
+				<a class=" modal-action modal-close waves-effect waves-green btn-flat" id="agreeButton1" style="float: right; margin: 6px 0px">Agree</a>
+				<a class=" modal-action modal-close waves-effect waves-green btn-flat" id="cancelButton1" style="float: right; margin: 6px 0px">Cancel</a>
+			</div>
+		</div>
+		<!--Confirmation Portion Ends-->	
+
+	</body>
+</html>

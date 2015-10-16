@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Bon Voyage</title>
+	 	<link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}images/favicon.ico" />
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/DashboardAgent.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/bootstrap-social.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/nouislider.min.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/nouislider.pips.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<script src="..{{STATIC_URL}}js/DashboardAgent.js"></script>
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+	</head>
+	<body>
+		<nav class='row brown darken-4 container-nav' style="height: 70px">
+			<div class="nav-wrapper col s3" style="padding-left:0px">
+				<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+				<a href="#" class="brand-logo">Dashboard</a>
+			</div>
+			<div class="right col s5 offset-s4">
+				<ul>
+					<li>
+						<a class="waves-effect waves-light" style="font-size: 16px;font-weight: 500">Hi {{firstName}} {{lastName}} 
+						</a>
+					</li>
+					<li>
+						<a href="/dashboardAgent" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+							Dashboard
+						</a>
+					</li>
+				</ul>
+			</div>    
+		</nav>
+		<div class="container">
+			<div>
+				<table>
+					<thead>
+						<tr class="labels">
+							<th data-field="name">Requirement-Name</th>
+							<th data-field="startdate">Start Date</th>
+							<th data-field="enddate">End Date</th>
+							<th data-field="price">Budget</th>
+							<th data-field="PlacestoVisit">Places To Visit</th>
+							<th data-field="count">Count</th>
+							<th data-field="additional">
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for r in reqobj %}
+							<tr id='{{r.id}}' class="row requirementRow">
+								<td>{{r.name}}</td>
+								<td>{{r.startDate}}</td>
+								<td>{{r.endDate}}</td>
+								<td>{{r.budget}}</td>
+								<td>{{r.places}}</td>
+								<td><div class="col s6 rowcount offset-s3 tooltipped" data-position="right" data-delay="50" data-tooltip="No Of Packages by Different Agents!!!">{{r.count}}</div></td>
+								<td class="additional">
+									{% ifequal r.package 0 %}
+										<a class="waves-effect waves-light btn tooltipped addPackage" data-position="top" data-delay="50" data-tooltip="Create Your Package !!" style="background-color: #505050"><i class="fa fa-smile-o"></i>Add Your Package!!</a>
+									{% endifequal %}
+									{% ifequal r.package 1 %}
+										{% ifequal r.packageSelect 1 %}
+											<a class="waves-effect waves-light btn tooltipped viewBid" data-position="top" data-delay="50" data-tooltip="View Bids!!" style="background-color: #505050"><i class="fa fa-hand-peace-o"></i>Place Your Bid!!</a>
+										{% endifequal %}
+										{% ifequal r.packageSelect 0 %}
+											<a class="waves-effect waves-light btn" style="background-color: #505050"><i class="fa fa-hand-peace-o"></i>Traveller Approval Pending!!</a>
+										{% endifequal %}
+									{% endifequal %}
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Bon Voyage</title>
+	 	<link rel="shortcut icon" type="image/x-icon" href="{{STATIC_URL}}images/favicon.ico" />
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/destinations.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/bootstrap-social.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/nouislider.min.css">
+		<link rel="stylesheet" href="..{{STATIC_URL}}css/nouislider.pips.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<script src="..{{STATIC_URL}}js/destinations.js"></script>
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+		<script src="..{{STATIC_URL}}js/nouislider.min.js"></script>
+    	<script src="..{{STATIC_URL}}js/wNumb.min.js"></script>
+
+	</head>
+	<body>	
+		<nav class='row brown darken-4 container-nav' style="height: 70px !important ; margin-bottom:0px">
+			<div class="nav-wrapper col s3" style="padding-left:0px">
+				<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+				<a href="/" class="brand-logo">Destinations</a>
+			</div>
+		</nav>
+	    <div class="wrapper" style="background-color:#191B1F; min-height:80vw;padding-top: 4% " >
+		
+			<div class="row" id="Weekend-Getaways-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				
+				<p class="row travelname">Weekend Travel</p>
+				<p class="row travelcontent">Destinations that freshen you up</p>	
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped active-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped inactive-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped inactive-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped inactive-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends"> 
+						F
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>	
+
+			</div>
+			<div class="row" id="Romantic-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				<p class="row travelname">Romantic Travel</p>
+				<p class="row travelcontent">Destinations that leave your partner with an open mouth</p>	
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped inactive-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped active-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped inactive-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped inactive-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends">
+						F
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>	
+			</div>
+			<div class="row" id="Relax-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				<p class="row travelname">Travel to relax</p>
+				<p class="row travelcontent">Some recommendations to forget the routine and stress</p>	
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped inactive-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped inactive-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped active-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped inactive-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped inactive-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends">
+						F
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>	
+			</div>
+			<div class="row" id="Cultural-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				<p class="row travelname">Cultural Tours</p>
+				<p class="row travelcontent">Meet the culture and traditions of unique destinations</p>	
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped inactive-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped inactive-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped active-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped inactive-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped inactive-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends">
+						F
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>	
+			</div>
+			<div class="row" id="Disappear-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				<p class="row travelname">Travel to disappear</p>
+				<p class="row travelcontent">Some ideas to disappear a few days the world</p>
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped inactive-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped inactive-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped active-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped inactive-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped inactive-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends">
+						F
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>		
+			</div>
+			<div class="row" id="Adventure-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				<p class="row travelname">Adventure Travel</p>
+				<p class="row travelcontent">Some of the most exciting and fun destinations</p>	
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped inactive-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped inactive-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped active-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped inactive-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends">
+						F
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>	
+			</div>
+			<div class="row" id="City-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				<p class="row travelname">Cities to travel</p>
+				<p class="row travelcontent">Meet the cities with which you have always dreamed</p>	
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped inactive-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped inactive-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped inactive-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped active-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends">
+						F
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>	
+			</div>
+			<div class="row" id="With-Friends-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				<p class="row travelname">Traveling with friends</p>
+				<p class="row travelcontent">Have fun with your friends in incredible destinations</p>
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped inactive-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped inactive-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped inactive-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped inactive-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped active-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends">
+						F
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>		
+			</div>
+			<div class="row" id="With-Family-Nav1" style="cursor:pointer;width:70%;background-color:#1D1F23">
+				<p class="row travelname">Traveling with family</p>
+				<p class="row travelcontent">Destination of the most fun for the whole family</p>	
+				<div class="row" style="width: 99%;margin-left: 9%">
+					<p class="col s1 tooltipped inactive-category Weekend-Getaways-Nav" data-position="bottom" data-delay="50" data-tooltip="Weekend-Getaways">
+						W
+					</p>
+					<p class="col s1 tooltipped inactive-category Romantic-Nav" data-position="bottom" data-delay="50" data-tooltip="Romantic">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Relax-Nav" data-position="bottom" data-delay="50" data-tooltip="Relax">
+						R
+					</p>
+					<p class="col s1 tooltipped inactive-category Cultural-Nav" data-position="bottom" data-delay="50" data-tooltip="Cultural">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category Disappear-Nav" data-position="bottom" data-delay="50" data-tooltip="Disappear">
+						D
+					</p>
+					<p class="col s1 tooltipped inactive-category Adventure-Nav" data-position="bottom" data-delay="50" data-tooltip=" Adventure">
+						A
+					</p>
+					<p class="col s1 tooltipped inactive-category City-Nav" data-position="bottom" data-delay="50" data-tooltip="City">
+						C
+					</p>
+					<p class="col s1 tooltipped inactive-category With-Friends-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Friends">
+						F
+					</p>
+					<p class="col s1 tooltipped active-category With-Family-Nav" data-position="bottom" data-delay="50" data-tooltip="With-Family">
+						F
+					</p>
+				</div>	
+			</div>
+
+			{% for a in data %}
+				<div class="row {{a.type}}" style="margin-bottom:0px;width: 88%;margin-left: 12%">
+					{% for b in a.des%}
+						<div class="card col s3 offset-s2 " style="background-image:url({{b.image}}); height:205px; width:309px; margin: 1% 1%">
+							<!-- <image src='{{b.image}}'> -->
+							<div class="card-content white-text" style="margin-left: 2%;margin-top: 20%;text-align:center">
+								<span class="card-title" style="font-size: 2rem;font-weight: 500">{{b.name}}</span>
+							</div>
+						</div>
+					{% endfor %}	
+				</div>
+			{% endfor %}	
+		</div>
+	</body>
+</html>
