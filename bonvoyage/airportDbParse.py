@@ -1,7 +1,8 @@
 from urllib.request import urlopen
 import pymysql
+import settings
 
-conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='bhavya', db='bonvoyage',autocommit='true')
+conn = pymysql.connect(host=settings.DATABASES['default']['HOST'], port=int(settings.DATABASES['default']['PORT']), user=settings.DATABASES['default']['USER'], passwd=settings.DATABASES['default']['PASSWORD'], db=settings.DATABASES['default']['NAME'],autocommit='true')
 cur = conn.cursor()
 content = urlopen("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat")
 html = content.read()

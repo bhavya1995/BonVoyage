@@ -142,4 +142,25 @@ function main(){
 		})
     });
     $('select').material_select();
+
+    $('.signout').click(function(){
+
+		$.ajax({
+			
+			type: 'GET',
+			url: '/logout',
+			success:function(data){
+
+				Materialize.toast('You Have Been Logged Out Successfully!', 4000)
+				var url = "/";
+				window.location.href=url;
+			}
+		});
+	})
+
+	$('.imageClass').click(function(){
+
+		var url = "/";
+		window.location.href=url;
+	})
 }

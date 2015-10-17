@@ -29,14 +29,17 @@ urlpatterns = patterns('',
 	url(r'^agentVerification.html/$', 'bonvoyage.views.agentVerification'),	
 	url(r'uploadVerify/', 'bonvoyage.views.uploadVerify', name = 'uploadVerify'),
 	url(r'imageProcessing/', 'bonvoyage.views.imageProcessing'),
+	url(r'imageProcessingPan/', 'bonvoyage.views.imageProcessingPan'),
 	url(r'submitFeedback/', 'bonvoyage.views.submitFeedback'),
 	url(r'submitAgentDetails/', 'bonvoyage.views.submitAgentDetails'),
 	url(r'destinations/', 'bonvoyage.views.destinations'),
 	url(r'adminVerification.html/', 'bonvoyage.views.adminVerification'),
+	url(r'adminVerificationPan/', 'bonvoyage.views.adminVerificationPan'),
 	url(r'allAgents.html/', 'bonvoyage.views.allAgents'),
 	url(r'login/', 'bonvoyage.views.login'),
 	url(r'loginCustom/', 'bonvoyage.views.loginCustom'),
 	url(r'approve/', 'bonvoyage.views.approve'),
+	url(r'logout', 'bonvoyage.views.logout'),
 )+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
     
 

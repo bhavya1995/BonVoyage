@@ -21,10 +21,10 @@
 	<body>
 		<nav class='row brown darken-4 container-nav' style="height: 70px">
 			<div class="nav-wrapper col s3" style="padding-left:0px">
-				<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+				<image src='{{STATIC_URL}}images/logo_custom.jpg' class="imageClass">
 				<a href="#" class="brand-logo">Dashboard</a>
 			</div>
-			<div class="right col s5 offset-s4">
+			<div class="right col s5 offset-s4" style="width: 30%">
 				<ul>
 					<li>
 						<a class="waves-effect waves-light" style="font-size: 16px;font-weight: 500">Hi {{firstName}} {{lastName}} 
@@ -35,10 +35,15 @@
 							Dashboard
 						</a>
 					</li>
+					<li>
+						<a class="signout" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+							Sign-Out
+						</a>
+					</li>
 				</ul>
 			</div>    
 		</nav>
-		<div class="container">
+		<div class="container" style="width:90%">
 			<div>
 				<table>
 					<thead>
@@ -61,18 +66,18 @@
 								<td>{{r.startDate}}</td>
 								<td>{{r.endDate}}</td>
 								<td>{{r.budget}}</td>
-								<td>{{r.places}}</td>
+								<td style="width:40%">{{r.places}}</td>
 								<td><div class="col s6 rowcount offset-s3 tooltipped" data-position="right" data-delay="50" data-tooltip="No Of Packages by Different Agents!!!">{{r.count}}</div></td>
 								<td class="additional">
 									{% ifequal r.package 0 %}
-										<a class="waves-effect waves-light btn tooltipped addPackage" data-position="top" data-delay="50" data-tooltip="Create Your Package !!" style="background-color: #505050"><i class="fa fa-smile-o"></i>Add Your Package!!</a>
+										<a class="waves-effect waves-light btn tooltipped addPackage" data-position="top" data-delay="50" data-tooltip="Create Your Package !!" style="background-color: #505050;font-size:13px">Add Your Package!!</a>
 									{% endifequal %}
 									{% ifequal r.package 1 %}
 										{% ifequal r.packageSelect 1 %}
 											<a class="waves-effect waves-light btn tooltipped viewBid" data-position="top" data-delay="50" data-tooltip="View Bids!!" style="background-color: #505050"><i class="fa fa-hand-peace-o"></i>Place Your Bid!!</a>
 										{% endifequal %}
 										{% ifequal r.packageSelect 0 %}
-											<a class="waves-effect waves-light btn" style="background-color: #505050"><i class="fa fa-hand-peace-o"></i>Traveller Approval Pending!!</a>
+											<a class="waves-effect waves-light btn" style="background-color: #505050;font-size:12px">Traveller Approval Pending!!</a>
 										{% endifequal %}
 									{% endifequal %}
 								</td>

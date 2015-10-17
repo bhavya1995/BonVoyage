@@ -31,37 +31,57 @@
 				</nav>
 				<div class="row alert-row">
 					<div class="alert alert-info" role="alert">
-  						<a href="#" class="alert-link">PLEASE UPLOAD YOUR DRIVING LICENCE PHOTO FOR VERIFICATION PURPOSES !</a>
+  						<a href="#" class="alert-link">PLEASE UPLOAD YOUR DRIVING LICENCE AND PAN CARD PHOTO FOR VERIFICATION PURPOSES !</a>
 					</div>
 				</div>
 	    		{% load jfutags %}
 				{% jfu 'imageUploadExten.html' 'uploadVerify' %}
 		
 				<div class="row">
-					<form>
-					  <div class="form-group col-md-12">
-					    <label for="licenceNum">Licence Number</label>
-					    <input type="text" class="form-control" id="licenceNum" placeholder="Licence Number">
-					  </div>
-					  <div class="form-group col-md-6">
-					    <label for="name">Name</label>
-					    <input type="text" class="form-control" id="name" placeholder="Name">
-					  </div>
-					  <div class="form-group col-md-6">
-					    <label for="fathersName">Father's Name</label>
-					    <input type="text" class="form-control" placeholder="Father's Name" id="fathersName">
-					  </div>
-					   <div class='form-group input-group date col-md-12' id='dob'>
-                    		<input type='text' class="form-control col-md-6" id='dobInput' />
-                    		<span class="input-group-addon">
-                        		<span class="glyphicon glyphicon-calendar"></span>
-                    		</span>
-                		</div>
-					  <div class="form-group col-md-12">
-					    <label for="address">Address</label>
-					    <input type="text" class="form-control" placeholder="Address" id="address">
-					  </div>
-					</form>
+					<div class="col-md-6">
+						<div class="form-group col-md-12">
+							<label for="licenceNum">Licence Number</label>
+							<input type="text" class="form-control" id="licenceNum" placeholder="Licence Number">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="name" placeholder="Name">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="fathersName">Father's Name</label>
+							<input type="text" class="form-control" placeholder="Father's Name" id="fathersName">
+						</div>
+						<div class='form-group input-group date col-md-12' id='dob'>
+							<input type='text' class="form-control col-md-6" id='dobInput' />
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+						<div class="form-group col-md-12">
+							<label for="address">Address</label>
+							<input type="text" class="form-control" placeholder="Address" id="address">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group col-md-12">
+							<label for="PanCardNo">Pancard Number</label>
+							<input type="text" class="form-control" id="PanCardNo" placeholder="PanCard Number">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="namePan" placeholder="Name">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="fathersNamePan">Father's Name</label>
+							<input type="text" class="form-control" placeholder="Father's Name" id="fathersNamePan">
+						</div>
+						<div class='form-group input-group date col-md-12' id='dob'>
+							<input type='text' class="form-control col-md-6" id='dobInputPan' />
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
 				</div>
 				<div class="row">
 			     	<button class="col-md-12 btn btn-primary" id='submitReq' type="submit" name="action">Submit

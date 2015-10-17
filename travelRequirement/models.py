@@ -11,6 +11,7 @@ class UserDetails(models.Model):
 	typeClass = (
 		('Traveller', 'Traveller'),
 		('Travel-Agent', 'Travel-Agent'),
+		('Admin', 'Admin')
 	)
 	type = models.CharField(max_length = 20, choices = typeClass)
 	user = models.OneToOneField(User)
@@ -36,7 +37,7 @@ class travelPackage (models.Model):
 	name = models.CharField (null = True, blank = True, max_length = 255)
 	price = models.CharField (null = True, blank = True, max_length = 255)
 	bidPrice = models.CharField (null = True, blank = True, max_length = 255,default=0)
-	remarks = models.CharField(max_length = 255, null = True)
+	remarks = models.CharField(max_length = 255, null = True,default="The Place is truly awesome with great food and good quality people")
 	selectedForBid = models.BooleanField(default=False)
 	selectedByTraveller = models.BooleanField(default=False)
 
@@ -113,10 +114,14 @@ class agent_files (models.Model):
 class agent_details (models.Model):
 	userId = models.ForeignKey(User)
 	licenceNum = models.CharField(max_length = 255, null = True)
+	panNum = models.CharField(max_length = 255, null = True)
 	name = models.CharField(max_length = 255, null = True)
 	fathersName = models.CharField(max_length = 255, null = True)
 	address = models.CharField(max_length = 255, null = True)
 	dob = models.CharField(max_length = 255, null = True)
+	namePan = models.CharField(max_length = 255, null = True)
+	fathersNamePan = models.CharField(max_length = 255, null = True)
+	dobPan = models.CharField(max_length = 255, null = True)
 
 class destination (models.Model):
 

@@ -214,5 +214,10 @@ function main(){
 		$('.With-Family').css('display','block');
 	})
 
+	$('.imageClass').click(function(){
+
+		var url = "/";
+		window.location.href=url;
+	})
 }
 

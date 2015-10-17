@@ -27,4 +27,10 @@ function main(){
 			}
 		});
 	})
+
+	$('.imageClass').click(function(){
+
+		var url = "/";
+		window.location.href=url;
+	})
 }

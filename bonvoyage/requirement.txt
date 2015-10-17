@@ -1,0 +1,7 @@
+Django
+PyMySQL
+beautifulsoup4
+selenium
+xmltodict
+django-jfu
+urllib3

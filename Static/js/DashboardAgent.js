@@ -17,4 +17,25 @@ function main(){
 		var url='/makePackage?q='+id;
 		window.location=url;
 	})
+
+	$('.signout').click(function(){
+
+		$.ajax({
+			
+			type: 'GET',
+			url: '/logout',
+			success:function(data){
+
+				Materialize.toast('You Have Been Logged Out Successfully!', 4000)
+				var url = "/";
+				window.location.href=url;
+			}
+		});
+	})
+
+	$('.imageClass').click(function(){
+
+		var url = "/";
+		window.location.href=url;
+	})
 }

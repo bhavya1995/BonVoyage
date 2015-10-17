@@ -21,10 +21,10 @@
 	<body>
 		<nav class='row brown darken-4 container-nav' style="height: 70px">
 			<div class="nav-wrapper col s3" style="padding-left:0px">
-				<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+				<image src='{{STATIC_URL}}images/logo_custom.jpg' class="imageClass">
 				<a href="#" class="brand-logo">View All Unverified Agents</a>
 			</div>
-			<div class="right col s5 offset-s4">
+			<div class="right col s5 offset-s4" style="width:30%">
 				<ul>
 					<li>
 						<a class="waves-effect waves-light" style="font-size: 16px;font-weight: 500">Hi {{firstName}} {{lastName}} 
@@ -35,31 +35,45 @@
 							Dashboard
 						</a>
 					</li>
+					<li>
+						<a class="signout" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+							Sign-Out
+						</a>
+					</li>
 				</ul>
 			</div>    
 		</nav>
-		<div class="container">
+		<div class="container" style="width:95% !important;">
 			<div>
 				<table>
 					<thead>
 						<tr class="labels">
 							<th data-field="name">Name</th>
 							<th data-field="licenceNum">Licence Number</th>
+							<th data-field="panNum">PanCard Number</th>
 							<th data-field="fathersName">Father's Name</th>
 							<th data-field="address">Address</th>
 							<th data-field="dob">Date of Birth</th>
+							<th data-field="verifyLicence">Verify Licence Number</th>
+							<th data-field="verifyPan">Verify Pan Number</th>
+
 						</tr>
 					</thead>
 
 					<tbody>
 						{% for r in ver %}
 							<tr id='{{r.id}}' class="row requirementRow">
-								<td>{{r.name}}</td>
+								<td>{{r.namePan}}</td>
 								<td>{{r.licenceNum}}</td>
-								<td>{{r.fathersName}}</td>
-								<td>{{r.address}}</td>
-								<td>{{r.dob}}</td>
+								<td>{{r.panNum}}</td>
+								<td>{{r.fathersNamePan}}</td>
+								<td style="width:19% !important;">{{r.address}}</td>
+								<td>{{r.dobPan}}</td>
+								<td><a class="waves-effect waves-light btn verifyLicence" style="background-color: dimgray">Verify Licence</a></td>
+								<td><a class="waves-effect waves-light btn verifyPan" 
+								style="background-color: dimgray">Verify Pan</a></td>
 							</tr>
+							
 						{% endfor %}
 					</tbody>
 				</table>

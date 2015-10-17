@@ -1,6 +1,6 @@
 nav img{
-    width: 100px;
-    height: 100px;
+    width: 100px !important;
+    height: 100px !important;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 12px;

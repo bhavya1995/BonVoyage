@@ -20,12 +20,17 @@
 	</head>
 	<body>
 		<nav class='brown darken-4'>
-		    <div class="nav-wrapper">
-		    	<div class="row">
-		    	<div class="col"><image src='{{STATIC_URL}}images/logo_custom.jpg'></image></div>
-		      <div class="col s4"><h5>Create A Package</h5></div>
-		      </image>
-		    </div>
+			<div class="row nav-wrapper">
+				<div class="col s8">
+					<div class="col s2"><image src='{{STATIC_URL}}images/logo_custom.jpg' class="imageClass"></image></div>
+					<div class="col s8"><h5>Create A Package</h5></div>
+				</div>
+				<div class="right col s1 offset-s3" style="cursor:pointer">
+					<a class="signout" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+						Sign-Out
+					</a>
+				</div>
+			</div>	
 	    </nav>
 
 	    <div class="row">

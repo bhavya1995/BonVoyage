@@ -27,15 +27,20 @@
     	<script src="..{{STATIC_URL}}js/owl.carousel.js"></script>
 	</head>
 	<body>
-		<nav class='brown darken-4'>
-		    <div class="nav-wrapper">
-		    	<image src='{{STATIC_URL}}images/logo_custom.jpg'>
+		<nav class='row brown darken-4'>
+		    <div class="nav-wrapper col s6">
+		    	<image src='{{STATIC_URL}}images/logo_custom.jpg' class="imageClass">
 		      <a href="#" class="brand-logo">Post Requirement</a>
 		    </div>
+		    <div class="right col s1 offset-s3" style="cursor:pointer">
+				<a class="signout" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+					Sign-Out
+				</a>
+			</div>
 	    </nav>
 	    <div class="row">
 		    <form class="col s12">
-		      <div class="row">
+		      <div class="row" style="margin-top: 5%">
 		        <div class="input-field col s6">
 	                 <i class="fa fa-calendar prefix"></i>
 		          <input placeholder="Start Date" id="startDate" type="date" class="datepicker">

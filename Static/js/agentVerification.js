@@ -10,7 +10,7 @@ function main (){
 			url: '/imageProcessing',
 			type: 'GET',
 			data: {
-  				'imageName': $($('table tr td a')[0]).prop('title')
+  				'imageName': $($('table tr td a')[0]).prop('title'),
 			},
 			success: function(data){
 				console.log("adad")
@@ -22,7 +22,25 @@ function main (){
 				$('#dobInput').val(data['dob'])
 			}
 		})
+
+		$.ajax({
+			url: '/imageProcessingPan',
+			type: 'GET',
+			data: {
+  				'imageName': $($('table tr td a')[2]).prop('title')
+			},
+			success: function(data){
+				console.log("adad")
+				console.log(data)
+				$('#PanCardNo').val(data['panNum'])
+				$('#namePan').val(data['name'])
+				$('#fathersNamePan').val(data['fathersName'])
+				$('#dobInputPan').val(data['dob'])
+			}
+		})
+
 	})
+
 
 	$('#submitReq').click(function(){
 		var licenceNum = $('#licenceNum').val()
@@ -30,6 +48,10 @@ function main (){
 		var fathersName = $('#fathersName').val()
 		var address = $('#address').val()
 		var dob = $('#dobInput').val()
+		var panNum = $('#PanCardNo').val()
+		var namePan = $('#namePan').val()
+		var fathersNamePan = $('#fathersNamePan').val()
+		var dobPan = $('#dobInputPan').val()
 		$.ajax({
 			url: '/submitAgentDetails',
 			type: 'GET',
@@ -38,7 +60,11 @@ function main (){
 				'name': name,
 				'fathersName': fathersName,
 				'address': address,
-				'dob': dob
+				'dob': dob,
+				'panNum': panNum,
+				'namePan': namePan,
+				'fathersNamePan': fathersNamePan,
+				'dobPan': dobPan
 			},
 			success: function(data){
 				window.location.href = "/dashboardAgent"

@@ -18,10 +18,10 @@
 	<body>
 		<nav class='row brown darken-4 container-nav' style="height: 70px">
 			<div class="nav-wrapper col s3" style="padding-left:0px">
-				<image src='{{STATIC_URL}}images/logo_custom.jpg'>
-				<a href="#" class="brand-logo">Dashboard</a>
+				<image src='{{STATIC_URL}}images/logo_custom.jpg' class="imageClass">
+				<a href="" class="brand-logo">Dashboard</a>
 			</div>
-			<div class="right col s5 offset-s4">
+			<div class="right col s6 offset-s3">
 				<ul>
 					<li>
 						<a class="waves-effect waves-light" style="font-size: 16px;font-weight: 500">Hi {{firstName}} {{lastName}} 
@@ -34,6 +34,11 @@
 					</li>
 					<li>
 						<a href="/userRequirement" style="font-size: 16px;font-weight: 500" id='post-requirement' class="with-top-nav waves-effect waves-light">Post Requirements</a>
+					</li>
+					<li>
+						<a class="signout" style="font-size: 16px;font-weight: 500" class="with-top-nav waves-effect waves-light">
+							Sign-Out
+						</a>
 					</li>
 				</ul>
 			</div>    

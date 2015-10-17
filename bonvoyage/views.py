@@ -113,7 +113,6 @@ def dashboardTraveller(request):
 	user=User.objects.filter(id=request.user.id)[0];
 	userReq=travelReq.objects.filter(userId=user.id).order_by('-startDate');
 	date=datetime.date.today();
-	print(date)
 	reqobj=[];
 	count1 = -1
 	if (userReq.count() == 0):
@@ -123,7 +122,9 @@ def dashboardTraveller(request):
 	else:
 		for u in userReq:
 			end=0
-			if(u.endDate < "16 October,2015" or u.endDate < "17 October,2015"):
+			
+			print(u.endDate)
+			if(u.endDate == "14 October,2015" or u.endDate == "16 October,2015" or u.endDate == "17 October,2015"):
 				end=1;
 			count= travelPackage.objects.filter(travelReqId=u.id).count();
 			id=u.id;	
@@ -210,10 +211,10 @@ def bid(request):
 		savings=0;
 		user_Agent= User.objects.filter(id=p.userId.id)[0];
 		name= user_Agent.first_name + " " + user_Agent.last_name;
-		if(int(p.bidPrice)!=0):
-			discount=int(100-((int(p.price)-int(p.bidPrice))/int(p.price))*100);
-			savings=(int(p.price)-int(p.bidPrice));
-			newPrice=(int(p.price)-int(p.bidPrice));
+		# if(int(p.bidPrice)!=0):
+		discount=int(100-((int(p.price)-int(p.bidPrice))/int(p.price))*100);
+		savings=(int(p.price)-int(p.bidPrice));
+		newPrice=(int(p.price)-int(p.bidPrice));
 		obj={
 			'Id':p.id,
 			'Username':name,
@@ -224,8 +225,8 @@ def bid(request):
 			'Savings':savings
 		}
 		packageArray.append(obj);
-
-	print(packageArray);	
+	packageArray.sort(key=lambda x: x['Savings'], reverse=False)
+	print(packageArray)
 	return render(request,'biddingViewTraveller.html',{
 
 			'firstName':request.user.first_name,
@@ -267,10 +268,10 @@ def bid_agent(request):
 		name= user_Agent.first_name + " " + user_Agent.last_name;
 		if (request.user.email == p.userId.email):
 			user=1;
-		if(int(p.bidPrice)!=0):
-			discount=int(100-((int(p.price)-int(p.bidPrice))/int(p.price))*100);
-			savings=(int(p.price)-int(p.bidPrice));
-			newPrice=(int(p.price)-int(p.bidPrice));
+		# if(int(p.bidPrice)!=0):
+		discount=int(100-((int(p.price)-int(p.bidPrice))/int(p.price))*100);
+		savings=(int(p.price)-int(p.bidPrice));
+		newPrice=(int(p.price)-int(p.bidPrice));
 		
 		obj={
 			'Id':p.id,
@@ -283,7 +284,9 @@ def bid_agent(request):
 			'Savings':savings
 		}
 		packageArray.append(obj);
-
+	print(packageArray)
+	packageArray.sort(key=lambda x: x['Savings'], reverse=False)
+	
 	return render(request,'biddingViewTravelAgent.html',{
 
 			'firstName':request.user.first_name,
@@ -757,12 +760,29 @@ def submitAgentDetails(request):
 	fathersName = request.GET.get('fathersName')
 	address = request.GET.get('address')
 	dob = request.GET.get('dob')
-	agentObj = agent_details.objects.create(userId = request.user, licenceNum = licenceNum, name = name, fathersName = fathersName, address = address, dob = dob)
+	panNum = request.GET.get('panNum')
+	namePan = request.GET.get('namePan')
+	fathersNamePan = request.GET.get('fathersNamePan')
+	dobPan = request.GET.get('dobPan')
+	agentObj = agent_details.objects.create(userId = request.user, licenceNum = licenceNum, name = name, fathersName = fathersName, address = address, dob = dob, panNum = panNum, namePan = namePan, fathersNamePan = fathersNamePan, dobPan = dobPan)
 	agentObj.save()
 	temp = {
 		"statusCus": 1
 	}
 	return HttpResponse(json.dumps(temp), content_type="application/json")
+
+def submitAgentDetailsPan(request):
+	PanCardNo = request.GET.get('PanCardNo')
+	name = request.GET.get('name')
+	fathersName = request.GET.get('fathersName')
+	dob = request.GET.get('dob')
+	agent = agent_details.objects.filter(userId = request.user, name = name, fathersName = fathersName)
+	agentObj = agent_details.objects.create(userId = request.user, licenceNum = licenceNum, name = name, fathersName = fathersName, address = address, dob = dob)
+	agentObj.save()
+	temp = {
+		"statusCus": 1
+	}
+	return HttpResponse(json.dumps(temp), content_type="application/json")	
 
 def destinations(request):
 
@@ -886,6 +906,7 @@ def adminVerification(request):
 	return render(request,'adminVerification.html', {'data': temp})
 
 def allAgents(request):
+	user=request.user;
 	userList = UserDetails.objects.filter (is_verified = False)
 	finalArray = []
 	for u in userList:
@@ -894,21 +915,42 @@ def allAgents(request):
 			agentObj = agent_details.objects.filter(userId = u.user)[0]
 			temp = {
 				'id': u.id,
-				'name': agentObj.name,
+				'namePan': agentObj.namePan,
 				'licenceNum': agentObj.licenceNum,
-				'fathersName': agentObj.fathersName,
+				'panNum': agentObj.panNum,
+				'fathersNamePan': agentObj.fathersNamePan,
 				'address': agentObj.address,
-				'dob': agentObj.dob,
+				'dobPan': agentObj.dobPan,
 			}
 			finalArray.append(temp)
 		except:
 			pass
 	print(finalArray)
-	return render(request,'viewAllUnverified.html', {'ver': finalArray});
+	return render(request,'viewAllUnverified.html', {
+		
+		'ver': finalArray,
+		'firstName':user.first_name,
+		'lastName':user.last_name
+	});
 
 def login(request):
 	email = request.GET.get('email')
-	user = auth.authenticate(username = email, password = "bhavya")
+	password = request.GET.get('password')
+	firstName = request.GET.get('firstName')
+	lastName = request.GET.get('lastName')
+	number = request.GET.get('number')
+	type=request.GET.get('type')
+
+	print(email,password)
+	user=User.objects.create(username = email, first_name=firstName,last_name=lastName,is_active=True);
+	user.set_password(password)
+	user.save()
+	if (type == "Traveller"):
+		userDetails=UserDetails.objects.create(type=type,user=user,is_verified=True)
+	else:
+		userDetails=UserDetails.objects.create(type=type,user=user,is_verified=False)
+	user = auth.authenticate(username = email, password = password)
+	print(user)
 	auth.login(request,user)
 	temp = {
 		'status': 1
@@ -918,7 +960,8 @@ def login(request):
 def loginCustom (request):
 	# pass
 	email = request.GET.get('email')
-	user = auth.authenticate(username = email, password = "bhavya")
+	password = request.GET.get('password')
+	user = auth.authenticate(username = email, password = password)
 	auth.login(request,user)
 	print(user)
 	if (user.is_superuser):
@@ -948,3 +991,147 @@ def approve(request):
 		'status': 1
 	}
 	return HttpResponse(json.dumps(temp), content_type="application/json")
+
+def logout(request):
+	auth.logout(request);
+	return HttpResponse(json.dumps({'status':1}), content_type="application/json");	
+
+def users():
+
+	user=User.objects.create(username = "sukhmeet",email = "s@gmail.com",first_name= "Sukhmeet",last_name= "Singh",is_active=True);
+	user.set_password("123")
+	user.save()
+	userDetails=UserDetails.objects.create(type="Traveller",user= user,is_verified=True)
+
+	user1=User.objects.create(username = "bhavya",email = "b@gmail.com", first_name= "Bhavya",last_name= "Gupta",is_active=True);
+	user1.set_password("123")
+	user1.save()
+	userDetails1=UserDetails.objects.create(type="Traveller",user= user1,is_verified=True)
+
+	user2=User.objects.create(username = "aanchal",email = "a@gmail.com", first_name= "Aanchal",last_name= "Somani",is_active=True);
+	user2.set_password("123")
+	user2.save()
+	userDetails2=UserDetails.objects.create(type="Traveller",user= user2,is_verified=True)
+
+	user3=User.objects.create(username = "vinay",email = "v@gmail.com", first_name= "Vinay",last_name= "Kumar",is_active=True);
+	user3.set_password("123")
+	user3.save()
+	userDetails3=UserDetails.objects.create(type="Travel-Agent",user= user3,is_verified=True)
+
+	user4=User.objects.create(username = "rajesh",email = "r@gmail.com", first_name= "Rajesh",last_name= "Birok",is_active=True);
+	user4.set_password("123")
+	user4.save()
+	userDetails4=UserDetails.objects.create(type="Travel-Agent",user= user4,is_verified=True)
+
+	user5=User.objects.create(username = "himank",email = "h@gmail.com", first_name= "himank",last_name= "Bhalla",is_active=True);
+	user5.set_password("123")
+	user5.save()
+	userDetails5=UserDetails.objects.create(type="Travel-Agent",user= user5,is_verified=True)
+
+	travelreq1=travelReq.objects.create(userId = user, startDate = "25 October,2015", endDate ="16 November,2015",budget= "800000",reqName= "USA Tour",placeToVisit= "Buena Vista, CO 81211, USA Bouton, IA 50039, USA Fort Smith, Unorganized, NT, Canada")	
+	travelreq2=travelReq.objects.create(userId = user, startDate = "9 September,2015", endDate ="14 October,2015",budget= "750000",reqName= "Europe",placeToVisit= "Rosdorf, Germany 87-100 Toruń, Poland")	
+	travelreq3=travelReq.objects.create(userId = user1, startDate = "27 November,2015", endDate ="31 December,2015",budget= "100000",reqName= "India",placeToVisit= "Shimla, Himachal Pradesh 171002, India Rampur, Himachal Pradesh, India Himachal Pradesh 175123, India")	
+	travelreq4=travelReq.objects.create(userId = user2, startDate = "26 November,2015", endDate ="1 December,2015",budget= "50000",reqName= "India",placeToVisit= "Manali")	
+
+	travelpack1=travelPackage.objects.create(travelReqId= travelreq1,userId= user3,name= "USA",price= "650000")
+	print(travelpack1)
+	travelpack2=travelPackage.objects.create(travelReqId= travelreq2,userId= user3,name= "Europe",price= "650000")
+	travelpack3=travelPackage.objects.create(travelReqId= travelreq1,userId= user4,name= "USA Tour",price= "750000")
+	travelpack4=travelPackage.objects.create(travelReqId= travelreq1,userId= user5,name= "United States",price= "700000")
+
+	airportdet=flightDetails.objects.create(fromPlace = "DEL Indira Gandhi Intl Delhi India",toPlace = "Boston South Station Boston United States",type = "Economic", travelPackageId =travelpack1 )
+	airportdet1=flightDetails.objects.create(fromPlace = "Boston South Station Boston United States",toPlace = "YCG Castlegar Castlegar Canada",type = "Economic", travelPackageId = travelpack1)
+	airportdet2=flightDetails.objects.create(fromPlace = "BOM Chhatrapati Shivaji Intl Mumbai India",toPlace = "DCA Washington United States",type = "First Class", travelPackageId = travelpack3)
+	airportdet3=flightDetails.objects.create(fromPlace = "MAA Chennai Intl Madras India",toPlace = "LGA La Guardia New York United States",type = "Business", travelPackageId = travelpack4)
+
+	hoteldet1=hotelDetails.objects.create(name= "Abc Hotel",place= "Boston",roomType= "Deluxe",numOfDays= 3,travelPackageId= travelpack1)
+	hoteldet2=hotelDetails.objects.create(name= "Def Hotel",place= "Canada",roomType= "Superior",numOfDays= 4,travelPackageId= travelpack1)
+	hoteldet3=hotelDetails.objects.create(name= "Efg Hotel",place= "Washington",roomType= "Superior",numOfDays= 5,travelPackageId= travelpack3)
+	hoteldet4=hotelDetails.objects.create(name= "Ijl HOtel",place= "New York",roomType= "Deluxe",numOfDays= 4,travelPackageId= travelpack4)
+
+	dayssc1=daysSch.objects.create(dayNum= "1", description= "SIC Crocodile Farm at million year stone park at 15.30 hrs after Coral Island",travelPackageId= travelpack1)
+	dayssc2=daysSch.objects.create(dayNum= "2", description= "Coral Island Tour with Indian Lunch on SIC",travelPackageId= travelpack1)
+	dayssc3=daysSch.objects.create(dayNum= "3", description= "Universal Studio with one way transfer from Hotel",travelPackageId= travelpack1)
+	dayssc4=daysSch.objects.create(dayNum= "1", description= "Half Day city tour on Seat In Coach;Noon till Sunset at Sentosa in Singapore on Seat In Coach",travelPackageId= travelpack3)
+	dayssc5=daysSch.objects.create(dayNum= "2", description= "Night Safari on Seat In Coach",travelPackageId= travelpack4)
+
+def imageProcessingPan(request):
+	imageName = request.GET.get('imageName')
+	print(imageName)
+	print("bbb")
+	agentFile = agent_files.objects.filter(userId = request.user)
+	print(agentFile[0].filename()) 
+	for a in agentFile:
+		if (a.filename() == imageName):
+			currentFile = a
+			break
+	encoded = base64.b64encode(b'bonvoyage:+SHo7BSd5m11F1VuJ59VuHUB')
+	encoded = encoded.decode()
+	r = requests.request('POST', 'https://cloud.ocrsdk.com/processImage?language=english&exportformat=xml', files={'file': open(a.fileUpload.path, 'rb')}, headers={"Authorization": "Basic " + encoded})
+	print(r.text)
+	data = xmltodict.parse(r.text)
+	# e = xml.etree.ElementTree.parse(r.text).getroot()
+	while (1):
+		r = requests.request('GET', 'http://cloud.ocrsdk.com/getTaskStatus?taskId=' + data['response']['task']['@id'], headers={"Authorization": "Basic " + encoded})
+		data = xmltodict.parse(r.text)
+		if (data['response']['task']['@status'] == "Completed"):
+			break
+	print(data)
+	print(data['response']['task']['@resultUrl'])
+	r = requests.request('GET', data['response']['task']['@resultUrl'])
+	data = xmltodict.parse(r.text)
+	block1 = data['document']['page']['block'][0]
+	block2 = data['document']['page']['block'][1]
+	name = ""
+	for b in block1['text']['par'][2]['line']['formatting']['charParams']:
+		try:
+			name += b['#text']
+		except:
+			name += " "
+	fathersName = ""
+	for b in block2['text']['par'][0]['line'][0]['formatting']['charParams']:
+		try:
+			fathersName += b['#text']
+		except:
+			fathersName += " "
+
+	dob = ""
+	for b in block2['text']['par'][0]['line'][1]['formatting']['charParams']:
+		try:
+			dob += b['#text']
+		except:
+			dob += " "
+	panNum = ""
+	for b in block2['text']['par'][2]['line']['formatting']['charParams']:
+		try:
+			panNum += b['#text']
+		except:
+			panNum += " "
+	temp = {
+		'panNum': panNum,
+		'name': name,
+		'fathersName': fathersName,
+		'dob': dob
+	}
+	print(temp)
+	return HttpResponse(json.dumps(temp), content_type="application/json")
+
+def adminVerificationPan(request):
+	agentId = request.GET.get('id')
+	print(User.objects.filter(id = agentId))
+	user = UserDetails.objects.filter(id = agentId)[0].user
+	print(user)
+	agentObj = agent_details.objects.filter(userId = user)[0]
+	webpage = r"https://incometaxindiaefiling.gov.in/e-Filing/Services/KnowYourPanLink.html"
+	dobsearchterm = agentObj.dobPan
+	surnamesearchtermArr = agentObj.namePan.split(' ')
+	surnamesearchterm = surnamesearchtermArr[1]
+	firstnamesearchterm = surnamesearchtermArr[0]
+	driver = webdriver.Chrome()
+	driver.get(webpage)
+	sbox = driver.find_element_by_css_selector("#dateField")
+	sbox.send_keys(dobsearchterm)
+	sbox1 = driver.find_element_by_css_selector("#KnowYourPan_userNameDetails_surName")
+	sbox1.send_keys(surnamesearchterm)
+	sbox2 = driver.find_element_by_css_selector("#KnowYourPan_userNameDetails_firstName")
+	sbox2.send_keys(firstnamesearchterm)

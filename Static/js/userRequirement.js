@@ -127,6 +127,7 @@ function main (){
 		start: [0,200000],
 		connect: true,
 		// margin: 10000,
+		step:500,
 		range: {
 			'min': 0,
 			// '2%' : 40000,
@@ -134,7 +135,7 @@ function main (){
 		},
 		format: wNumb({
 			decimals: 0,
-			thousand: ',',
+			thousand: '',
 			prefix: 'Rs.',
 		}),
 		pips: {
@@ -186,4 +187,24 @@ function main (){
 		});
 	});
 
+	$('.signout').click(function(){
+
+		$.ajax({
+			
+			type: 'GET',
+			url: '/logout',
+			success:function(data){
+
+				Materialize.toast('You Have Been Logged Out Successfully!', 4000)
+				var url = "/";
+				window.location.href=url;
+			}
+		});
+	})
+
+	$('.imageClass').click(function(){
+
+		var url = "/";
+		window.location.href=url;
+	})
 }
