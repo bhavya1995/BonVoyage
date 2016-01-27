@@ -1,199 +1,90 @@
-/*======================Container====================*/
+/*====================Main-Container====================*/
 
-.wrapper{
+body{
 
-	background-image: url('../images/bg.png');
-	height: 100vh;
-}	
-
-.wrapper-cover {
-    background-color:rgba(0,0,0,0.5);
-    height: 100vh;
-    margin-left: -15px !important;
-    margin-right: -15px !important; 
-}
-/*==================================================*/
-
-
-/*======================NavBar====================*/
-.destinationsButton {
-    background-color: #004A7F;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    padding: 3%;
-    color: #fff !important;
-    border-radius: 23px;
-    border: 0px;
-    margin-top: 4%;
-    margin-left: 5%;
-}
-@-webkit-keyframes glowing {
-  0% { background-color: #f9a825; -webkit-box-shadow: 0 0 3px #f9a825; }
-  50% { background-color: #f4511e; -webkit-box-shadow: 0 0 40px #f4511e; }
-  100% { background-color: #ff3d00; -webkit-box-shadow: 0 0 3px #ff3d00; }
+	overflow: hidden;
 }
 
-@-moz-keyframes glowing {
-  0% { background-color: #f9a825; -moz-box-shadow: 0 0 3px #f9a825; }
-  50% { background-color: #f4511e; -moz-box-shadow: 0 0 40px #f4511e; }
-  100% { background-color: #ff3d00; -moz-box-shadow: 0 0 3px #ff3d00; }
+.containerDiv{	
+	
+	border-left: 18px solid #211818;
+    border-top: 18px solid #211818;
 }
 
-@-o-keyframes glowing {
-  0% { background-color: #f9a825; box-shadow: 0 0 3px #f9a825; }
-  50% { background-color: #f4511e; box-shadow: 0 0 40px #f4511e; }
-  100% { background-color: #ff3d00; box-shadow: 0 0 3px #ff3d00; }
+.imageContainer{
+
+	border-left: 14px solid #3E2723;
+    width: 100%;
+    margin: auto;
+    border-top: 14px solid #3E2723;
+    border-bottom: 14px solid #3E2723;
 }
 
-@keyframes glowing {
-  0% { background-color: #f9a825; box-shadow: 0 0 3px #f9a825; }
-  50% { background-color: #f4511e; box-shadow: 0 0 40px #f4511e; }
-  100% { background-color: #ff3d00; box-shadow: 0 0 3px #ff3d00; }
+#coverImage{
+
+	background: url("../images/background.jpg") no-repeat;
+    padding: 0px;
+    background-size: cover;
+    height: 350px;
 }
 
-.destinationsButton {
-  -webkit-animation: glowing 1500ms infinite;
-  -moz-animation: glowing 1500ms infinite;
-  -o-animation: glowing 1500ms infinite;
-  animation: glowing 1500ms infinite;
+#coverSlider{
+
+	padding: 0px;
 }
 
-.navbar{
+.row{
 
-    margin-top: 1%;
+	margin: 0px;
 }
 
-.navbar-right{
+.commonPic{
 
-    margin: 1% 3% 0% 0%;
-    font-size: 2rem;
-    width: 6%;
+	padding: 0px;
+	border-left: 7px solid #1F1F1F;
+	border-top: 7px solid #1F1F1F;
 }
 
-.navbar-right button{
+.rightPic{
 
-    color: #fff;
-    padding: 8% 29%;
-    background-color: #3E2723;
-    border-radius: 15px;
-    border: 0px;
-    cursor:pointer;
+	width: 222px;
 }
 
-.navbar-right button:hover{
+.oddTile{
 
-    text-decoration: none;
-    background-color: #6F2424;
-    border: 2px solid #3E2723;
+	padding: 0px;
+	background-color: #3A403E;
 }
 
-.navbar-header a{
+.evenTile{
 
-    font-size: 2.5rem;
-    margin-left: 30%;
-    margin-top: 8%;
+	padding: 0px;
+	background-color: #1E1E1E;
 }
 
-.navbar-header{
-
- /*   background-image: url('../images/logo_custom.jpg');
-    width: 256px;
-    height: 256px;
- */   margin-left: 3% !important;
-}
-
-.navbar-header img {
-    height: 122px;
-    border-radius: 70px;
-}
-
-.navbar-header a:hover{
-
-    text-decoration: none;
-}
-
-.nav-content{
+.faIcon{
 
 	color: #fff;
-    font-size: 2rem;
+    font-size: 71px;
+    height: 105px;
+    margin: 33px 0px 0px 77px;
 }
 
-.nav{
+.tileText{
 
-    padding-top: 0.5%;
+	background-color: #BEC2C1;
+	padding: 0px;
+	height: 149px;
+	border-right: 1px solid #7F8080;
 }
 
-.login{
+.tileText p{
 
-    font-size: 2rem;
-    background-color: green;
-    color: #fff;
-    border: 0%;
-    margin: 0% 13%;
-    padding: 14% 24%;
+	width: 80%;
+    margin: 5% auto;
 }
+/*========================================*/
 
-
-/*==================================================*/
-
-/*======================inner-bg======================*/
-
-.firstrow{
-
-    padding: 3% 0% 2% 0%;
-    margin-top: 5%;
-}
-
-.title{
-
-    font-size: 4rem;
-    color: #fff;
-    font-weight: 500;
-    text-align: center;
-}
-
-.description{
-
-    font-size: 3rem;
-    text-align: center;
-    color: #fff;
-}
-
-.modifyhr{
-
-    margin-top: 6%;
-    width: 49vw;
-}
-
-.createaccountcontent{
-
-    font-size: 2.5rem;
-    text-align: center;
-    color: #fff;
-    padding: 5% 0% 5% 0%;
-}
-
-.signupbutton{
-
-    font-size: 2rem;
-    padding: 7% 14%;
-    background-color: #2BBBAD;
-    color: #fff;
-    border: 0px;
-    margin-left: 4%;
-}
-
-.thirdrow-buttons button:hover{
-
-    background-color: #E57373;
-}
-/*==================================================*/
 
 /*=====================signupandloginform===================*/
 

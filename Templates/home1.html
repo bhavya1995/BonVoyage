@@ -9,84 +9,62 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="..{{STATIC_URL}}css/home.css">
 		<link rel="stylesheet" href="..{{STATIC_URL}}css/bootstrap-social.css">
-		
-		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
 		<script src="..{{STATIC_URL}}js/home.js"></script>
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="containerDiv">
-			<div class="row imageContainer">
-				<div class="col-md-6" id="coverImage">
-					<!-- <img src="{{STATIC_URL}}images/background.jpg" alt="BonVoyage CoverPic"> -->
-				</div>
-  				<div class="col-md-6" id="coverSlider">
-  					<div class="row">
-  						<div class="col-md-4 leftPic commonPic">
-  							<img src="{{STATIC_URL}}images/image8.jpg" width='303px' height='168px' alt="Tourist Destination">
-  						</div>
-  						<div class="col-md-4 midPic commonPic">
-  							<img src="{{STATIC_URL}}images/image1.jpg" width='240px' height='168px' alt="Tourist Destination">
-  						</div>
-  						<div class="col-md-4 rightPic commonPic">
-  							<img src="{{STATIC_URL}}images/image5.jpg" width='215px' height='168px' alt="Tourist Destination">
-  						</div>
-  					</div>
-  					<div class="row">
-  						<div class="col-md-4 leftPic commonPic">
-  							<img src="{{STATIC_URL}}images/IMAGES/BAYAHIBE.jpg" height='168px' alt="Tourist Destination">
-  						</div>
-  						<div class="col-md-4 midPic commonPic">
-  							<img src="{{STATIC_URL}}images/IMAGES/CHARLESTON.jpg" height='168px' alt="Tourist Destination">
-  						</div>
-  						<div class="col-md-4 rightPic commonPic">
-  							<img src="{{STATIC_URL}}images/IMAGES/JODHPUR.jpg" width="215px" height='168px' alt="Tourist Destination">
-  						</div>
-  					</div>
-  				</div>
-			</div>
-			<div class="tabsContainer">
-				<div class="row">
-					<div class="col-md-2 oddTile">
-						<i class="fa fa-arrow-circle-up faIcon"></i>
+		<div class="container-fluid wrapper">
+		<div class="container-fluid wrapper-cover">
+			<nav class="navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a href="#"><image src="{{STATIC_URL}}images/logo_custom.jpg" class="imageClass"></a>
 					</div>
-					<div class="col-md-2 evenTile">
-						<i class="fa fa-sign-in faIcon"></i>
+					<div class="col-md-6 col-md-offset-2">
+						<button type="button" class="destinationsButton">Confused Where To Go?? Let Us Help You!!</button>
 					</div>
-					<div class="col-md-2 oddTile">
-						<i class="fa fa-exclamation-triangle faIcon"></i>
-					</div>
-					<div class="col-md-2 evenTile">
-						<i class="fa fa-tachometer faIcon"></i>
-					</div>
-					<div class="col-md-2 oddTile">
-						<i class="fa fa-space-shuttle faIcon"></i>
-					</div>
-					<div class="col-md-2 evenTile">
-						<i class="fa fa-arrow-circle-up faIcon"></i>
+					<div class="navbar-right ">
+						<button type="button" class="loginbutton" data-toggle="modal" data-target="#loginForm">Login</button>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-2 tileText">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non ultricies tellus. Nam semper id lectus ut vehicula. Sed congue gravida feugiat</p>
+			</nav>
+			<div class="inner-bg container">
+				<div class="row firstrow">
+					<div class="col-md-2"></div>
+					<div class="col-md-8 title">
+						Welcome
 					</div>
-					<div class="col-md-2 tileText">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non ultricies tellus. Nam semper id lectus ut vehicula. Sed congue gravida feugiat</p>
-					</div>
-					<div class="col-md-2 tileText">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non ultricies tellus. Nam semper id lectus ut vehicula. Sed congue gravida feugiat</p>
-					</div>
-					<div class="col-md-2 tileText">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non ultricies tellus. Nam semper id lectus ut vehicula. Sed congue gravida feugiat</p>
-					</div>
-					<div class="col-md-2 tileText">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non ultricies tellus. Nam semper id lectus ut vehicula. Sed congue gravida feugiat</p>
-					</div>
-					<div class="col-md-2 tileText">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non ultricies tellus. Nam semper id lectus ut vehicula. Sed congue gravida feugiat</p>
-					</div>
+					<div class="col-md-2"></div>
 				</div>
-			</div>	
+				<div class="row secondrow">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div class="row description">
+							The safest and easiest way for travellors to connect and collaborate travel-agents and each other.
+						</div>
+						<div class="row"><hr class="modifyhr"></div>	
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row thirdrow">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div class="row createaccountcontent">
+							Create your free account !!
+						</div>
+						<div class="row thirdrow-buttons">
+							<div class="col-md-4"></div>
+							<div class="col-md-4">
+								<button type="button" class="signupbutton" data-toggle="modal" data-target="#signupForm">Sign up now !!</button>
+							</div>
+							<div class="col-md-4">
+							</div>
+						</div>	
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+			</div> 
 		</div>
 
       <!-- Modal content-->
