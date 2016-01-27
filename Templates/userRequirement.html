@@ -8,9 +8,8 @@
 		<link rel="stylesheet" href="..{{STATIC_URL}}css/jquery-gmaps-latlon-picker.css">
 		<link rel="stylesheet" href="..{{STATIC_URL}}css/nouislider.min.css">
 		<link rel="stylesheet" href="..{{STATIC_URL}}css/nouislider.pips.css">
+		<script src="http://maps.google.com/maps/api/js?libraries=places&region=uk&language=en&sensor=true"></script>
 		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
-		<script src="..{{STATIC_URL}}js/jquery-gmaps-latlon-picker.js"></script>
-		<script src="..{{STATIC_URL}}js/googleApi.js"></script>
 		
 		<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
 		<script src="..{{STATIC_URL}}js/userRequirement.js"></script>
@@ -67,8 +66,7 @@
 		    </form>
 
 	    </div>
-		<fieldset class="gllpLatlonPicker">
-			<div class="gllpMap">Google Maps</div>
+			<div id="map_canvas" class="gllpMap" style="height: 350px;width: 100%;margin: 0.6em;"></div>
 			<br/>
 			<input type="hidden" class="gllpLatitude"/>
 			<input type="hidden" class="gllpLongitude"/>

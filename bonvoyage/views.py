@@ -519,11 +519,11 @@ def getConditions(request):
 	else:
 		year = "2015"
 	# isoObj.code
-	encoded = base64.b64encode(b'Gkn_oo8ghgF333uqvFiire-g9xjRwEdvLWZAqHWh:bhavya')
+	encoded = base64.b64encode(b'lhjwdOWWyW8gIysExeXk-6clGoWLol3gLadUmq5y:bhavya')
 	encoded = encoded.decode()
 	r=requests.request('GET', "https://api.qalendra.com/assets?date=" + year + "-" + startDate + "-28&countryCode=" + isoObj.code + "&perPage=50", headers={"Authorization": "Basic " + encoded});
 	jsonCondition = json.loads(r.text)
-	# print(jsonCondition)
+	print(jsonCondition)
 	finalArray = []
 	for d in jsonCondition['data']:
 		city = d['location']['address']['city']

@@ -1,0 +1,12 @@
+-add
+bonvoyage/__pycache__/__init__.cpython-34.pyc
+bonvoyage/__pycache__/settings.cpython-34.pyc
+bonvoyage/__pycache__/urls.cpython-34.pyc
+bonvoyage/__pycache__/views.cpython-34.pyc
+bonvoyage/__pycache__/wsgi.cpython-34.pyc
+travelRequirement/__pycache__/8
+travelRequirement/__pycache__/admin.cpython-34.pyc
+travelRequirement/__pycache__/__init__.cpython-34.pyc
+travelRequirement/__pycache__/models.cpython-34.pyc
+travelRequirement/migrations/__pycache__/__init__.cpython-34.pyc
+bonvoyage/settings.py
