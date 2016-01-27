@@ -654,7 +654,7 @@ def imageProcessing (request):
 		if (a.filename() == imageName):
 			currentFile = a
 			break
-	encoded = base64.b64encode(b'bonvoyage:+SHo7BSd5m11F1VuJ59VuHUB')
+	encoded = base64.b64encode(b'Bon Voyage:+A2FDjUlOxccsxn/DhYhZdGhI')
 	encoded = encoded.decode()
 	r = requests.request('POST', 'https://cloud.ocrsdk.com/processImage?language=english&exportformat=xml', files={'file': open(a.fileUpload.path, 'rb')}, headers={"Authorization": "Basic " + encoded})
 	print(r.text)
