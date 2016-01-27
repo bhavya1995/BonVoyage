@@ -9,7 +9,7 @@ nav img{
 }
 .travelname{
 
-	text-align: center;
+    text-align: center;
     font-size: 23px;
     margin: 0px;
     color: #fff;
@@ -19,7 +19,7 @@ nav img{
 
 .travelcontent{
 
-	text-align: center;
+    text-align: center;
     font-size: 17px;
     color: #DBDBDB;
     font-weight: 500;
@@ -27,7 +27,7 @@ nav img{
 
 .active-category{
 
-	text-align: center;
+    text-align: center;
     width: 5% !important;
     background-color: orange;
     color: #fff;
@@ -38,7 +38,7 @@ nav img{
 
 .inactive-category{
 
-	text-align: center;
+    text-align: center;
     width: 5% !important;
     background-color: purple;
     color: #fff;
@@ -47,12 +47,23 @@ nav img{
     margin: 0px 18px !important;
 }
 
-#Romantic-Nav1, #Relax-Nav1, #Cultural-Nav1 ,#Disappear-Nav1 ,#Adventure-Nav1 ,#City-Nav1 ,#With-Friends-Nav1 ,#With-Family-Nav1 {
+#category-nav{
 
-	display:none;
+    width: 99%;
+    margin-left: 9%;
 }
 
-.Romantic, .Relax, .Cultural ,.Disappear ,.Adventure ,.City ,.With-Friends ,.With-Family {
+#category-nav p{
 
-	display:none;
+    cursor:pointer;
+}
+
+#Romantic-title,#Relax-title,#Cultural-title,#Disappear-title,#Adventure-title,#City-title,#With-Friends-title,#With-Family-title{
+
+    display: none;
+}
+
+#Romantic-content,#Relax-content,#Cultural-content,#Disappear-content,#Adventure-content,#City-content,#With-Friends-content,#With-Family-content{
+
+    display: none;
 }
