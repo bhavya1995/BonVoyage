@@ -61,4 +61,17 @@ function main(){
 		$('.evenTile').css("background-color","#1E1E1E");
 		$(this).css("background-color","#3E2723");
 	})
+
+	$("#postRequirement").click(function(){
+
+		var url="/userRequirement";
+		window.location=url;
+	})
+
+	$("#postQuotation").click(function(){
+
+		var url="/makePackage";
+		window.location=url;
+	})
+	
 }
