@@ -22,7 +22,7 @@ body{
 
 #coverImage{
 
-	background: url("../images/background.jpg") no-repeat;
+	background: url("../images/background1.jpg") no-repeat;
     padding: 0px;
     background-size: cover;
     height: 380px;
@@ -45,9 +45,14 @@ body{
 	border-top: 7px solid #1F1F1F;
 }
 
+.leftPic, .midPic{
+
+	width: 220px;	
+}
+
 .rightPic{
 
-	width: 222px;
+	width: 219px;
 }
 
 .oddTile{
