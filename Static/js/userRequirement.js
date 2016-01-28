@@ -175,6 +175,9 @@ function main (){
 					if(data[i]['verdict'] === 'Good'){
 						classColor = 'light-green darken-1'
 					}
+					if(data[i]['verdict'] === 'Very Good'){
+						classColor = 'green darken-2'
+					}
 					divOwl += '<div class="card ' + classColor +'">' +
 						'<div class="card-content">' +
 							'<div class="row card-content-place">' +
