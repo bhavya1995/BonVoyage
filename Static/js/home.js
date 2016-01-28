@@ -54,4 +54,11 @@ function main(){
 		var url="/destinations";
 		window.location=url;
 	})
+
+	$('.tile').hover(function(){
+
+		$('.oddTile').css("background-color","#3A403E");
+		$('.evenTile').css("background-color","#1E1E1E");
+		$(this).css("background-color","#3E2723");
+	})
 }
