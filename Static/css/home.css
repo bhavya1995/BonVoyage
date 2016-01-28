@@ -20,11 +20,13 @@
     padding: 0px;
     background-size: cover;
     height: 380px;
+    width: 47% !important;
 }
 
 #coverSlider{
 
 	padding: 0px;
+    width: 53% !important;
 }
 
 .row{
