@@ -25,7 +25,7 @@ body{
 	background: url("../images/background.jpg") no-repeat;
     padding: 0px;
     background-size: cover;
-    height: 350px;
+    height: 380px;
 }
 
 #coverSlider{
@@ -54,12 +54,14 @@ body{
 
 	padding: 0px;
 	background-color: #3A403E;
+	height: 208px;
 }
 
 .evenTile{
 
 	padding: 0px;
 	background-color: #1E1E1E;
+	height: 208px;
 }
 
 .faIcon{
@@ -67,21 +69,30 @@ body{
 	color: #fff;
     font-size: 71px;
     height: 105px;
-    margin: 33px 0px 0px 77px;
+    margin: 62px 0px 0px 83px
+}
+
+.tabsContainer{
+
+	height: 207px;
 }
 
 .tileText{
 
-	background-color: #BEC2C1;
-	padding: 0px;
-	height: 149px;
-	border-right: 1px solid #7F8080;
+	font-size: 20px;
+    font-weight: 400;
+    text-align: -webkit-center;
+    color: #fff;
+    margin-top: -23px;
 }
 
-.tileText p{
+.footer p{
 
-	width: 80%;
-    margin: 5% auto;
+	height: 50px;
+    color: white;
+    background-color: black;
+    padding-top: 15px;
+    padding-left: 20px;
 }
 /*========================================*/
 
