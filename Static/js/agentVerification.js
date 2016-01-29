@@ -3,9 +3,24 @@ window.onload = function (){
 }
 
 function main (){
-	
+	$('#pre-loader').css('display', 'none');
 	$('.start').click(function(){
 		console.log("abc")
+		$('#pre-loader').css('display', 'block');
+
+		var progress = setInterval(function () {
+		    var $bar = $('.bar');
+
+		    if ($bar.width() >= 400) {
+		        clearInterval(progress);
+		        $('.progress').removeClass('active');
+		    } else {
+		        $bar.width($bar.width() + 40);
+		    }
+		    $bar.text("Please wait while we use Image Processing !");
+		}, 800);
+
+
 		$.ajax({
 			url: '/imageProcessing',
 			type: 'GET',
@@ -20,6 +35,8 @@ function main (){
 				$('#fathersName').val(data['fathersName'])
 				$('#address').val(data['address'])
 				$('#dobInput').val(data['dob'])
+				$('#pre-loader').css('display', 'none');
+
 			}
 		})
 
@@ -36,6 +53,8 @@ function main (){
 				$('#namePan').val(data['name'])
 				$('#fathersNamePan').val(data['fathersName'])
 				$('#dobInputPan').val(data['dob'])
+				$('#pre-loader').css('display', 'none');
+
 			}
 		})
 

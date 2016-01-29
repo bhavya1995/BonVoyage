@@ -654,8 +654,9 @@ def imageProcessing (request):
 		if (a.filename() == imageName):
 			currentFile = a
 			break
-	encoded = base64.b64encode(b'Bon Voyage:+A2FDjUlOxccsxn/DhYhZdGhI')
+	encoded = base64.b64encode(b'Bon Voyage:A2FDjUlOxccsxn/DhYhZdGhI')
 	encoded = encoded.decode()
+	print(encoded)
 	r = requests.request('POST', 'https://cloud.ocrsdk.com/processImage?language=english&exportformat=xml', files={'file': open(a.fileUpload.path, 'rb')}, headers={"Authorization": "Basic " + encoded})
 	print(r.text)
 	data = xmltodict.parse(r.text)
@@ -1065,7 +1066,7 @@ def imageProcessingPan(request):
 		if (a.filename() == imageName):
 			currentFile = a
 			break
-	encoded = base64.b64encode(b'bonvoyage:+SHo7BSd5m11F1VuJ59VuHUB')
+	encoded = base64.b64encode(b'Bon Voyage:A2FDjUlOxccsxn/DhYhZdGhI')
 	encoded = encoded.decode()
 	r = requests.request('POST', 'https://cloud.ocrsdk.com/processImage?language=english&exportformat=xml', files={'file': open(a.fileUpload.path, 'rb')}, headers={"Authorization": "Basic " + encoded})
 	print(r.text)
@@ -1077,7 +1078,9 @@ def imageProcessingPan(request):
 		if (data['response']['task']['@status'] == "Completed"):
 			break
 	print(data)
+	print("--------------------------")
 	print(data['response']['task']['@resultUrl'])
+	print("-----------------------------")
 	r = requests.request('GET', data['response']['task']['@resultUrl'])
 	data = xmltodict.parse(r.text)
 	block1 = data['document']['page']['block'][0]

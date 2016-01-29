@@ -5,7 +5,11 @@ window.onload = function (){
 function main (){
 	var owlCarouselCount = 0
 	$('.preloader-wrapper').css('display', 'none')
-
+	initialize();
+	if ( $('#map_canvas').children().length === 0 ) {
+	//	location.reload();
+    	initialize();
+    }
 	// $(".owl-carousel").owlCarousel({
 
 	// 	items: 4,
@@ -15,9 +19,10 @@ function main (){
 	// });
 
 
- $(function () {
-         var lat = 40,
-             lng = -105,
+ function initialize () {
+ 		console.log("lllll");
+         var lat = 52,
+             lng = 13,
              latlng = new google.maps.LatLng(lat, lng)
             // image = 'http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png';
 
@@ -96,7 +101,7 @@ function main (){
              infowindow.setContent(placeName);
              //infowindow.open(map, marker);
          }
-     });
+     }
 
 
 	$('#addCity').click(function (){

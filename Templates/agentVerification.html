@@ -8,16 +8,22 @@
 		<link rel="stylesheet" href="..{{STATIC_URL}}css/bootstrap-datetimepicker.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
+	
 		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="{{STATIC_URL}}js/moment.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-datetimepicker.js"></script>
 		<script src="..{{STATIC_URL}}js/agentVerification.js"></script>
 
+		
 	</head>
 	<body>
-		<div class="container-fluid wrapper">
+		<div id="pre-loader">
+			<div class="progress progress-striped active">
+		        <div class="bar" style="width: 0%;"></div>
+		    </div>
+		</div>
+    	<div class="container-fluid wrapper">
 			<div class="container-fluid wrapper-cover">
 				<nav class="navbar navbar-default">
 				  <div class="container-fluid nav-container">
