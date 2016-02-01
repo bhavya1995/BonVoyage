@@ -3,6 +3,8 @@ window.onload=function(){
 }
 function main(){
 	'use strict';
+	var introguide = introJs();
+	introguide.start();
 	$('.signupCustom').click(function(){
 		var email = $('#form-email').val()
 		var password = $('#pass').val()

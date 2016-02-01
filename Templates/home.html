@@ -9,14 +9,18 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="..{{STATIC_URL}}css/home.css">
 		<link rel="stylesheet" href="..{{STATIC_URL}}css/bootstrap-social.css">
-		
+	    <link href="..{{STATIC_URL}}css/introjs.css" rel="stylesheet">
+
+    	<link href="..{{STATIC_URL}}css/bootstrap-responsive.min.css" rel="stylesheet">
+
 		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
 		<script src="..{{STATIC_URL}}js/home.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 	</head>
 	<body>
 		<div class="containerDiv">
-			<div class="row imageContainer">
+			<div class="row imageContainer" data-step="1" data-position="bottom-middle-aligned" data-intro="BonVoyage-Every Traveller's Destination aims to bring travellers and travel agents together to maximize both of their profits and also looks to secure travellers by verifying agents !">
 				<div class="col-md-6" id="coverImage">
 					<!-- <img src="{{STATIC_URL}}images/background.jpg" alt="BonVoyage CoverPic"> -->
 				</div>
@@ -47,27 +51,27 @@
 			</div>
 			<div class="tabsContainer">
 				<div class="row">
-					<div class="col-md-2 oddTile tile" data-toggle="modal" data-target="#signupForm">
+					<div class="col-md-2 oddTile tile" data-toggle="modal" data-target="#signupForm" data-step="2" data-position="right" data-intro="Signup as a Traveller or Travel Agent">
 						<i class="fa fa-arrow-circle-up faIcon"></i>
 						<p class="tileText">Sign Up</p>
 					</div>
-					<div class="col-md-2 evenTile tile" data-toggle="modal" data-target="#loginForm">
+					<div class="col-md-2 evenTile tile" data-toggle="modal" data-target="#loginForm" data-step="3" data-position="right" data-intro="Login to view Dashboard and pending packages/quotations">
 						<i class="fa fa-sign-in faIcon"></i>
 						<p class="tileText">Login</p>
 					</div>
-					<div class="col-md-2 oddTile tile">
+					<div class="col-md-2 oddTile tile" data-step="4" data-position="right" data-intro="All Travel Agents use this tab to verify yourselves, upload your driving licence and pan card photo and see the MAGIC of IMAGE PROCESSING !!!">
 						<i class="fa fa-question-circle faIcon"></i>
 						<p class="tileText">Verify Yourself</p>
 					</div>
-					<div class="col-md-2 evenTile tile" id="postRequirement">
+					<div class="col-md-2 evenTile tile" id="postRequirement" data-step="5" data-position="right" data-intro="All Travellers use this tab to POST REQUIREMENT and then sit back and enjoy the fight between Travel Agents for lowest price !!!">
 						<i class="fa fa-pencil faIcon"></i>
 						<p class="tileText">Post Requirement</p>
 					</div>
-					<div class="col-md-2 oddTile tile">
+					<div class="col-md-2 oddTile tile" data-step="6" data-position="right" data-intro="Admin can use this tab to verify Travel Agents in case of discrepencies and can compare results of IMAGE PROCESSING !!">
 						<i class="fa fa-space-shuttle faIcon"></i>
 						<p class="tileText">Recommendations Destinations</p>
 					</div>
-					<div class="col-md-2 evenTile tile" id="postQuotation">
+					<div class="col-md-2 evenTile tile" id="postQuotation" data-step="7" data-position="left" data-intro="Travel Agents use this tab to post packages/quotations for requirement and then bid to lowest price to be seen at top and get HIRED !!">
 						<i class="fa fa-pencil faIcon"></i>
 						<p class="tileText">Post Quotation and Bid</p>
 					</div>
@@ -219,5 +223,6 @@
 			</div>
 		</div>
 		</div>
+		<script type="text/javascript" src="..{{STATIC_URL}}js/intro.js"></script>	
 	</body>
 </html>
