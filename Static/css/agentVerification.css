@@ -60,3 +60,7 @@ td img {
     padding: 30px;
     background: brown !important;
 }
+
+table .start {
+    display: none;
+}
