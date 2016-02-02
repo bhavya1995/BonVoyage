@@ -644,7 +644,6 @@ def submitFeedback(request):
 
 	return HttpResponse(json.dumps({"status": 1}), content_type="application/json")
 
-
 def imageProcessing (request):
 	imageName = request.GET.get('imageName')
 	print("bbb")

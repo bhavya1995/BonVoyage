@@ -106,7 +106,7 @@ DATABASES = {
         'NAME': 'bonvoyage', # DATABASE NAME GOES HERE
         'USER': 'root', #USER OF DATABASE
         'HOST': 'localhost', #HOST IP/LOCALHOST
-        'PASSWORD': 'password', #PASSWORD
+        'PASSWORD': 'sonu1995', #PASSWORD
         'PORT': '3306', #PORT OF MYSQL
     }
 }
