@@ -12,11 +12,6 @@
 	    <link href="..{{STATIC_URL}}css/introjs.css" rel="stylesheet">
 
     	<!-- <link href="..{{STATIC_URL}}css/bootstrap-responsive.min.css" rel="stylesheet"> -->
-
-		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
-		<script src="..{{STATIC_URL}}js/home.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
 	</head>
 	<body>
 		<div class="containerDiv">
@@ -59,7 +54,7 @@
 						<i class="fa fa-sign-in faIcon"></i>
 						<p class="tileText">Login</p>
 					</div>
-					<div class="col-md-2 oddTile tile" data-step="4" data-position="right" data-intro="All Travel Agents use this tab to verify yourselves, upload your driving licence and pan card photo and see the MAGIC of IMAGE PROCESSING !!!">
+					<div class="col-md-2 oddTile tile" id="agentVerification" data-step="4" data-position="right" data-intro="All Travel Agents use this tab to verify yourselves, upload your driving licence and pan card photo and see the MAGIC of IMAGE PROCESSING !!!">
 						<i class="fa fa-question-circle faIcon"></i>
 						<p class="tileText">Verify Yourself</p>
 					</div>
@@ -67,7 +62,7 @@
 						<i class="fa fa-pencil faIcon"></i>
 						<p class="tileText">Post Requirement</p>
 					</div>
-					<div class="col-md-2 oddTile tile" data-step="6" data-position="right" data-intro="Admin can use this tab to verify Travel Agents in case of discrepencies and can compare results of IMAGE PROCESSING !!">
+					<div class="col-md-2 oddTile tile" id="adminVerification" data-step="6" data-position="right" data-intro="Admin can use this tab to verify Travel Agents in case of discrepencies and can compare results of IMAGE PROCESSING !!">
 						<i class="fa fa-check faIcon"></i>
 						<p class="tileText">Admin Verification</p>
 					</div>
@@ -227,6 +222,9 @@
 			</div>
 		</div>
 		</div>
+		<script src="..{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+		<script src="..{{STATIC_URL}}js/home.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="..{{STATIC_URL}}js/intro.js"></script>	
 	</body>
 </html>

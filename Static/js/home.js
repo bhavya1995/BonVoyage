@@ -75,5 +75,17 @@ function main(){
 		var url="/makePackage";
 		window.location=url;
 	})
-	
+
+	$("#agentVerification").click(function(){
+
+		var url="/agentVerification.html";
+		window.location=url;
+	})
+
+	$("#adminVerification").click(function(){
+
+		console.log("In");
+		var url="/allAgents.html";
+		window.location=url;
+	})
 }
